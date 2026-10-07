@@ -1,0 +1,52 @@
+{
+  "statut": "proposition",
+  "exemple_fictif": false,
+  "url": "https://nom-du-client.netlify.app",
+  "langues": ["fr", "ar"],
+
+  "nom": { "fr": "Nom du restaurant", "ar": "اسم المطعم" },
+  "type_cuisine": { "fr": "Type de cuisine", "ar": "نوع المطبخ" },
+  "quartier": { "fr": "Quartier, Alger", "ar": "الحي، الجزائر العاصمة" },
+  "slogan": { "fr": "Une phrase d'accroche courte.", "ar": "جملة قصيرة وجذابة." },
+  "presentation": { "fr": "Deux ou trois phrases de présentation.", "ar": "جملتان أو ثلاث للتقديم." },
+  "points_forts": [
+    { "icone": "chef", "fr": "Fait maison", "ar": "صنع منزلي" },
+    { "icone": "famille", "fr": "Espace familial", "ar": "فضاء عائلي" },
+    { "icone": "parking", "fr": "Parking", "ar": "موقف سيارات" }
+  ],
+
+  "telephone": "0550 00 00 00",
+  "whatsapp": "0550 00 00 00",
+  "instagram": "compte.instagram",
+  "adresse": { "fr": "Adresse complète, Alger", "ar": "العنوان الكامل، الجزائر العاصمة" },
+  "recherche_google_maps": "Nom du restaurant, Quartier, Alger",
+  "lien_google_maps": "",
+
+  "horaires": {
+    "dimanche": ["12:00-23:00"],
+    "lundi": ["12:00-23:00"],
+    "mardi": ["12:00-23:00"],
+    "mercredi": ["12:00-23:00"],
+    "jeudi": ["12:00-23:00"],
+    "vendredi": ["14:00-23:00"],
+    "samedi": ["12:00-23:00"]
+  },
+
+  "couleurs": { "principale": "#1f3a33", "accent": "#c08a3e", "fond": "#f8f3ea" },
+
+  "photos": {
+    "accueil": "accueil.jpg",
+    "galerie": [
+      { "fichier": "galerie-1.jpg", "fr": "Légende", "ar": "تعليق" }
+    ]
+  },
+
+  "menu": [
+    {
+      "categorie": { "fr": "Catégorie", "ar": "الفئة" },
+      "plats": [
+        { "nom": { "fr": "Plat", "ar": "طبق" }, "description": { "fr": "Description", "ar": "وصف" }, "prix": 1000, "badges": ["maison"] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "statut": "proposition",
+  "exemple_fictif": true,
+  "url": "https://dar-nouara.netlify.app",
+  "langues": ["fr", "ar"],
+
+  "nom": { "fr": "Dar Nouara", "ar": "دار نوّارة" },
+  "type_cuisine": { "fr": "Cuisine algéroise traditionnelle", "ar": "مطبخ عاصمي تقليدي" },
+  "quartier": { "fr": "Hydra, Alger", "ar": "حيدرة، الجزائر العاصمة" },
+  "slogan": {
+    "fr": "Les recettes de nos grands-mères, servies avec le cœur.",
+    "ar": "وصفات جدّاتنا، تُقدَّم بكل حب."
+  },
+  "presentation": {
+    "fr": "Dans une maison mauresque au cœur de Hydra, Dar Nouara vous accueille pour un voyage dans la cuisine algéroise : rechta faite main, couscous du vendredi, bourek croustillant et pâtisseries maison. Une table familiale, généreuse et chaleureuse.",
+    "ar": "في بيت عتيق بقلب حيدرة، تستقبلكم دار نوّارة في رحلة عبر المطبخ العاصمي: رشتة مصنوعة باليد، كسكسي الجمعة، بوراك مقرمش وحلويات منزلية. مائدة عائلية، كريمة ودافئة."
+  },
+  "points_forts": [
+    { "icone": "chef", "fr": "Fait maison, chaque jour", "ar": "صُنع منزلي كل يوم" },
+    { "icone": "famille", "fr": "Salle familiale & terrasse", "ar": "قاعة عائلية وتراس" },
+    { "icone": "parking", "fr": "Parking à proximité", "ar": "موقف سيارات قريب" }
+  ],
+
+  "telephone": "0550 00 00 00",
+  "whatsapp": "0550 00 00 00",
+  "instagram": "dar.nouara.exemple",
+  "adresse": { "fr": "Sidi Yahia, Hydra, Alger", "ar": "سيدي يحيى، حيدرة، الجزائر العاصمة" },
+  "recherche_google_maps": "Sidi Yahia, Hydra, Alger",
+
+  "horaires": {
+    "dimanche": ["12:00-15:30", "19:00-23:00"],
+    "lundi": ["12:00-15:30", "19:00-23:00"],
+    "mardi": ["12:00-15:30", "19:00-23:00"],
+    "mercredi": ["12:00-15:30", "19:00-23:00"],
+    "jeudi": ["12:00-15:30", "19:00-00:00"],
+    "vendredi": ["13:30-16:00", "19:00-00:00"],
+    "samedi": []
+  },
+
+  "couleurs": { "principale": "#1f3a33", "accent": "#c08a3e", "fond": "#f8f3ea" },
+
+  "photos": {
+    "accueil": "accueil.jpg",
+    "galerie": [
+      { "fichier": "galerie-1.jpg", "fr": "Couscous du vendredi", "ar": "كسكسي الجمعة" },
+      { "fichier": "galerie-2.jpg", "fr": "La salle principale", "ar": "القاعة الرئيسية" },
+      { "fichier": "galerie-3.jpg", "fr": "Rechta maison", "ar": "رشتة منزلية" },
+      { "fichier": "galerie-4.jpg", "fr": "Pâtisseries traditionnelles", "ar": "حلويات تقليدية" },
+      { "fichier": "galerie-5.jpg", "fr": "La terrasse", "ar": "التراس" },
+      { "fichier": "galerie-6.jpg", "fr": "Thé à la menthe", "ar": "شاي بالنعناع" }
+    ]
+  },
+
+  "menu": [
+    {
+      "categorie": { "fr": "Entrées", "ar": "المقبلات" },
+      "plats": [
+        { "nom": { "fr": "Chorba frik", "ar": "شربة فريك" }, "description": { "fr": "Soupe de blé vert concassé, agneau et coriandre", "ar": "شوربة الفريك بلحم الغنم والقصبر" }, "prix": 450, "badges": ["maison"] },
+        { "nom": { "fr": "Bourek à la viande", "ar": "بوراك باللحم" }, "description": { "fr": "Feuilles de dioul croustillantes, viande hachée, œuf", "ar": "ديول مقرمش، لحم مفروم وبيض" }, "prix": 350 },
+        { "nom": { "fr": "Salade méchouia", "ar": "سلاطة مشوية" }, "description": { "fr": "Poivrons et tomates grillés, ail, huile d'olive", "ar": "فلفل وطماطم مشوية، ثوم وزيت زيتون" }, "prix": 400, "badges": ["vegetarien"] },
+        { "nom": { "fr": "Hmiss", "ar": "حميس" }, "description": { "fr": "Poivrons grillés à l'algéroise, servis tièdes", "ar": "فلفل مشوي على الطريقة العاصمية" }, "prix": 350, "badges": ["vegetarien"] }
+      ]
+    },
+    {
+      "categorie": { "fr": "Plats traditionnels", "ar": "الأطباق التقليدية" },
+      "plats": [
+        { "nom": { "fr": "Couscous royal", "ar": "كسكسي ملكي" }, "description": { "fr": "Agneau, poulet, merguez, légumes du marché", "ar": "لحم غنم، دجاج، مرقاز وخضر السوق" }, "prix": 1800, "badges": ["signature"] },
+        { "nom": { "fr": "Rechta algéroise", "ar": "رشتة عاصمية" }, "description": { "fr": "Pâtes fraîches roulées main, sauce blanche, navets", "ar": "عجائن طازجة باليد، مرق أبيض ولفت" }, "prix": 1400, "badges": ["maison"] },
+        { "nom": { "fr": "Chtitha djedj", "ar": "شطيطحة دجاج" }, "description": { "fr": "Poulet mijoté en sauce rouge épicée, pois chiches", "ar": "دجاج مطهو في مرق أحمر حار مع الحمص" }, "prix": 1300 },
+        { "nom": { "fr": "Tajine zitoune", "ar": "طاجين الزيتون" }, "description": { "fr": "Poulet, olives vertes et champignons", "ar": "دجاج، زيتون أخضر وفطر" }, "prix": 1500 },
+        { "nom": { "fr": "Mtewem", "ar": "المثوّم" }, "description": { "fr": "Boulettes de viande à l'ail, sauce blanche", "ar": "كويرات لحم بالثوم في مرق أبيض" }, "prix": 1500 }
+      ]
+    },
+    {
+      "categorie": { "fr": "Grillades", "ar": "المشاوي" },
+      "plats": [
+        { "nom": { "fr": "Brochettes d'agneau", "ar": "بروشات لحم الغنم" }, "description": { "fr": "Servies avec frites maison et salade", "ar": "تُقدَّم مع بطاطا مقلية منزلية وسلاطة" }, "prix": 1600 },
+        { "nom": { "fr": "Côtelettes d'agneau", "ar": "ريش الغنم" }, "description": { "fr": "Grillées au feu de bois", "ar": "مشوية على الحطب" }, "prix": 2200, "badges": ["signature"] },
+        { "nom": { "fr": "Merguez grillées", "ar": "مرقاز مشوي" }, "description": { "fr": "Merguez maison, harissa douce", "ar": "مرقاز منزلي مع هريسة خفيفة" }, "prix": 1200 }
+      ]
+    },
+    {
+      "categorie": { "fr": "Desserts", "ar": "الحلويات" },
+      "plats": [
+        { "nom": { "fr": "Kalb el louz", "ar": "قلب اللوز" }, "description": { "fr": "Gâteau de semoule aux amandes, sirop de fleur d'oranger", "ar": "حلوى السميد باللوز وماء الزهر" }, "prix": 300, "badges": ["maison"] },
+        { "nom": { "fr": "Makrout & thé", "ar": "مقروط مع شاي" }, "description": { "fr": "Makrout aux dattes et un thé à la menthe", "ar": "مقروط بالتمر وكأس شاي بالنعناع" }, "prix": 350 },
+        { "nom": { "fr": "Mhalbi", "ar": "مهلبية" }, "description": { "fr": "Crème de riz à la fleur d'oranger et cannelle", "ar": "مهلبية الأرز بماء الزهر والقرفة" }, "prix": 300 }
+      ]
+    },
+    {
+      "categorie": { "fr": "Boissons", "ar": "المشروبات" },
+      "plats": [
+        { "nom": { "fr": "Thé à la menthe", "ar": "شاي بالنعناع" }, "prix": 200 },
+        { "nom": { "fr": "Café", "ar": "قهوة" }, "prix": 150 },
+        { "nom": { "fr": "Jus d'orange pressé", "ar": "عصير برتقال طبيعي" }, "prix": 350 },
+        { "nom": { "fr": "Citronnade maison", "ar": "ليموناضة منزلية" }, "prix": 250 },
+        { "nom": { "fr": "Eau minérale", "ar": "ماء معدني" }, "prix": 100 }
+      ]
+    }
+  ]
+}

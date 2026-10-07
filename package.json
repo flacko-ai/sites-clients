@@ -1,0 +1,14 @@
+{
+  "name": "sites-clients",
+  "private": true,
+  "type": "module",
+  "description": "Sites vitrines des clients (un dossier par client dans clients/).",
+  "scripts": {
+    "generer": "node outils/generer.mjs",
+    "nouveau": "node outils/nouveau-client.mjs"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.1"
+  }
+}
