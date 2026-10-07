@@ -1,0 +1,53 @@
+# Met en ligne automatiquement sur Netlify les clients modifiés, à chaque envoi sur main.
+# Nécessite le secret NETLIFY_AUTH_TOKEN (GitHub → Settings → Secrets and variables → Actions).
+name: Mise en ligne Netlify
+
+on:
+  push:
+    branches: [main]
+    paths: ["clients/**"]
+  workflow_dispatch:
+    inputs:
+      clients:
+        description: "Dossiers à publier (séparés par des espaces), ou --tous"
+        required: true
+        default: "--tous"
+
+concurrency:
+  group: mise-en-ligne
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Trouver les clients modifiés
+        id: clients
+        env:
+          AVANT: ${{ github.event.before }}
+          MANUEL: ${{ github.event.inputs.clients }}
+        run: |
+          if [ -n "$MANUEL" ]; then
+            liste="$MANUEL"
+          elif [ -z "$AVANT" ] || [ "$AVANT" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$AVANT" 2>/dev/null; then
+            liste="--tous"
+          else
+            liste=$(git diff --name-only "$AVANT" "$GITHUB_SHA" -- clients/ | cut -d/ -f2 | sort -u | while read d; do [ -f "clients/$d/contenu.json" ] && echo "$d"; done | tr '\n' ' ')
+          fi
+          echo "Clients à publier : ${liste:-aucun}"
+          echo "liste=$liste" >> "$GITHUB_OUTPUT"
+
+      - name: Publier sur Netlify
+        if: steps.clients.outputs.liste != ''
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          LISTE: ${{ steps.clients.outputs.liste }}
+        run: node outils/deployer-netlify.mjs $LISTE

@@ -17,9 +17,10 @@ Il vend des sites vitrines à des commerces d'Alger (d'abord des restaurants).
 3. Copier les photos dans `clients/<dossier>/photos/` ; s'il en manque : `node outils/images-demo.mjs <dossier>`.
 4. `npm run generer -- <dossier>` puis vérifier le rendu (Playwright, Chromium dans `/opt/pw-browsers/chromium`, largeur 390 px) en FR et AR.
 5. Commit (dossier client complet, y compris `public/`), push sur `main`.
-6. Donner au propriétaire les réglages Netlify de `docs/NETLIFY.md` (section B) : Project name = `<dossier>`,
-   Base directory = `clients/<dossier>`. Claude n'a pas accès à Netlify : c'est lui qui crée le projet (2 min).
-   Si le nom Netlify diffère, mettre à jour `url` et régénérer (le QR code en dépend).
+6. La mise en ligne est **automatique** : le workflow GitHub `.github/workflows/mise-en-ligne.yml` crée le projet
+   Netlify (nom tiré de `url`) et publie chaque client modifié à chaque push sur `main` (secret `NETLIFY_AUTH_TOKEN`).
+   Vérifier le résultat du workflow (outils GitHub `actions_list` / `get_job_logs`) puis donner le lien au propriétaire.
+   Si le nom est déjà pris sur Netlify, changer `url`, régénérer (le QR code en dépend) et repousser.
 
 ## Technique
 - Générateur : `outils/generer.mjs` (Node, `sharp` pour les images, `qrcode` pour le QR). Gabarits : `modele-restaurant/gabarits.mjs`,

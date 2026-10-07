@@ -21,7 +21,22 @@ Netlify modifie parfois ses écrans ; si un libellé diffère un peu, cherchez l
 
 ---
 
-## B. Pour chaque nouveau client (environ 2 minutes)
+## A bis. Recommandé : mise en ligne 100 % automatique (une seule fois)
+
+Avec ce réglage, Claude crée et publie chaque nouveau site tout seul : la partie B devient inutile.
+
+1. **Créer la clé Netlify** : sur Netlify, cliquez sur votre avatar (en bas à gauche) → **User settings**
+   → **Applications** → **Personal access tokens** → **New access token**.
+   Description : `GitHub sites-clients` ; Expiration : la plus longue proposée → **Generate token**.
+   **Copiez** le code affiché (il ne sera plus montré). Ne l'envoyez à personne, pas même à Claude.
+2. **La ranger dans GitHub** : ouvrez https://github.com/flacko-ai/sites-clients → **Settings** (onglet en haut)
+   → **Secrets and variables** → **Actions** → **New repository secret**.
+   Name : `NETLIFY_AUTH_TOKEN` ; Secret : collez le code → **Add secret**.
+3. C'est tout. À chaque site envoyé par Claude, le robot (onglet **Actions** du dépôt) le met en ligne.
+
+---
+
+## B. Méthode manuelle, pour chaque nouveau client (environ 2 minutes)
 
 ### Écran 1 : la liste des projets
 - Connectez-vous sur **https://app.netlify.com**.
