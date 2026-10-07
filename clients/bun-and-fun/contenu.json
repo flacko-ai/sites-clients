@@ -4,6 +4,7 @@
   "url": "https://bun-and-fun.netlify.app",
   "langues": ["fr", "ar"],
   "mode": "commande",
+  "ambiance": "urbain",
 
   "nom": { "fr": "Bun & Fun", "ar": "Bun & Fun" },
   "type_cuisine": { "fr": "Smash burgers", "ar": "سماش برغر" },
@@ -30,15 +31,14 @@
 
   "couleurs": { "principale": "#171412", "accent": "#d9932b", "fond": "#f7f2ea" },
   "police_titre": "Kaushan Script",
-  "position_photo_accueil": "50% 12%",
 
   "photos": {
-    "accueil": "devanture.jpg",
+    "accueil": "devanture-nuit.jpg",
     "logo": "logo.png",
     "galerie": [
       { "fichier": "burgers.jpg", "fr": "Nos smash burgers", "ar": "سماش برغر" },
       { "fichier": "sandwichs.jpg", "fr": "Sandwich steak", "ar": "ساندويتش ستيك" },
-      { "fichier": "devanture-nuit.jpg", "fr": "Bun & Fun, le soir", "ar": "Bun & Fun في المساء" },
+      { "fichier": "devanture.jpg", "fr": "La devanture, en fin de journée", "ar": "الواجهة عند الغروب" },
       { "fichier": "salle.jpg", "fr": "La salle", "ar": "القاعة" },
       { "fichier": "affiche.jpg", "fr": "Smash Burgers", "ar": "سماش برغر" }
     ]

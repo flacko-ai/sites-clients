@@ -22,6 +22,11 @@ Il vend des sites vitrines à des commerces d'Alger (d'abord des restaurants).
    Vérifier le résultat du workflow (outils GitHub `actions_list` / `get_job_logs`) puis donner le lien au propriétaire.
    Si le nom est déjà pris sur Netlify, changer `url`, régénérer (le QR code en dépend) et repousser.
 
+## Design
+- Plugin `frontend-design` installé : le charger avant de créer une nouvelle ambiance ou de retoucher le design.
+- Ambiances : `classique` (gabarits.mjs + style.css) et `urbain` (ambiances/urbain.mjs + urbain.css). Choisir selon le restaurant ;
+  partir de l'univers réel du client (enseigne, ticket, ardoise…) plutôt que de défauts génériques.
+
 ## Technique
 - Générateur : `outils/generer.mjs` (Node, `sharp` pour les images, `qrcode` pour le QR). Gabarits : `modele-restaurant/gabarits.mjs`,
   style : `modele-restaurant/style.css`, script : `modele-restaurant/script.js`.

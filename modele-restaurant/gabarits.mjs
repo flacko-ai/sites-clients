@@ -138,11 +138,16 @@ const autreLangue = (c, lang, sousChemin) =>
 function tete(c, lang, { titre, description, chemin, prechargerAccueil = false }) {
   const d = c.d;
   const nonIndexe = d.statut !== "en-ligne";
-  const policeTitre = lang === "fr" && d.police_titre ? d.police_titre : "";
-  const polices = (lang === "ar"
-    ? "family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800"
-    : "family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800")
-    + (policeTitre ? `&family=${encodeURIComponent(policeTitre).replace(/%20/g, "+")}` : "");
+  const urbain = d.ambiance === "urbain";
+  const policeTitre = lang === "fr" && d.police_titre && !urbain ? d.police_titre : "";
+  const polices = urbain
+    ? (lang === "ar"
+      ? "family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Archivo:wdth,wght@62..125,500..900"
+      : "family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600")
+    : (lang === "ar"
+      ? "family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800"
+      : "family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800")
+      + (policeTitre ? `&family=${encodeURIComponent(policeTitre).replace(/%20/g, "+")}` : "");
   const urlPage = d.url ? `${d.url.replace(/\/$/, "")}/${chemin}` : "";
   const image = c.images.og ? `${d.url ? d.url.replace(/\/$/, "") + "/" : c.racine}${c.images.og}` : "";
   const alternatives = d.url && c.langues.length > 1
@@ -170,7 +175,7 @@ ${alternatives}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?${polices}&display=swap">
 ${prechargerAccueil && c.images.accueil ? `<link rel="preload" as="image" imagesrcset="${c.racine}${c.images.accueil.petit} 900w, ${c.racine}${c.images.accueil.grand} 1800w" imagesizes="100vw" fetchpriority="high">` : ""}
-<link rel="stylesheet" href="${c.racine}assets/style.css?v=${c.version}">
+<link rel="stylesheet" href="${c.racine}assets/${urbain ? "urbain" : "style"}.css?v=${c.version}">
 <style>:root{--c-principale:${c.couleurs.principale};--c-accent:${c.couleurs.accent};--c-fond:${c.couleurs.fond}${policeTitre ? `;--f-titre:"${echapper(policeTitre)}",Georgia,serif` : ""}}${c.d.position_photo_accueil ? `.hero img.fond{object-position:${echapper(c.d.position_photo_accueil)}}` : ""}</style>
 <script>document.documentElement.classList.add("js")</script>
 </head>`.replace(/\n{2,}/g, "\n");
@@ -477,3 +482,6 @@ export function pageQR(c) {
 </html>
 `;
 }
+
+// Utilitaires partagés avec les autres ambiances (modele-restaurant/ambiances/)
+export { UI, textes, t, prix, lienTel, lienWa, lienInsta, requeteMaps, lienItineraire, autreLangue, tete, bandeau, barreActions, tableauHoraires, ORDRE_JOURS };

@@ -22,6 +22,7 @@ Si la traduction arabe manque, le texte français est utilisé.
 | `photos.accueil` | `"accueil.jpg"` | grande photo du haut (de préférence horizontale) |
 | `photos.galerie` | `[{ "fichier": "…", "fr": "légende", "ar": "…" }]` | 6 photos, c'est l'idéal |
 | `menu` | catégories → plats | `prix` en DA (nombre entier) ; `badges` : `maison`, `signature`, `vegetarien`, `nouveau`, `epice` |
+| `ambiance` | `"classique"` (défaut) ou `"urbain"` | `urbain` : street food (menu en ticket de caisse, titres larges, livraison sur fond noir) |
 | `mode` | `"reservation"` (défaut) ou `"commande"` | `commande` : boutons « Commander sur WhatsApp » (restauration rapide, livraison) |
 | `horaires` vide `{}` | — | si les horaires sont inconnus, la carte des horaires et le statut « Ouvert/Fermé » sont masqués |
 | `photos.logo` | `"logo.png"` | facultatif : logo foncé sur fond clair, affiché en blanc à la place du nom sur la photo d'accueil |

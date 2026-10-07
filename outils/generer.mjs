@@ -11,7 +11,12 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import QRCode from "qrcode";
-import { pageAccueil, pageMenu, pageQR, tr } from "../modele-restaurant/gabarits.mjs";
+import * as classique from "../modele-restaurant/gabarits.mjs";
+import * as urbain from "../modele-restaurant/ambiances/urbain.mjs";
+
+const { pageQR, tr } = classique;
+// Ambiances disponibles (champ "ambiance" de contenu.json) ; "classique" par défaut.
+const AMBIANCES = { classique, urbain };
 
 const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const MODELE = path.join(RACINE, "modele-restaurant");
@@ -54,10 +59,13 @@ async function generer(dossier) {
   for (const sous of ["assets", "img", "menu", "qr", "ar/menu"]) await mkdir(path.join(sortie, sous), { recursive: true });
 
   // Feuille de style et script communs (+ version pour forcer le rafraîchissement du cache)
-  const css = await readFile(path.join(MODELE, "style.css"));
+  const ambiance = d.ambiance || "classique";
+  if (!AMBIANCES[ambiance]) erreur(`[${dossier}] ambiance inconnue "${ambiance}" (possibles : ${Object.keys(AMBIANCES).join(", ")})`);
+  const fichierCss = ambiance === "classique" ? "style.css" : `${ambiance}.css`;
+  const css = await readFile(path.join(MODELE, fichierCss));
   const js = await readFile(path.join(MODELE, "script.js"));
   const version = createHash("sha1").update(css).update(js).digest("hex").slice(0, 8);
-  await copyFile(path.join(MODELE, "style.css"), path.join(sortie, "assets/style.css"));
+  await copyFile(path.join(MODELE, fichierCss), path.join(sortie, "assets", fichierCss));
   await copyFile(path.join(MODELE, "script.js"), path.join(sortie, "assets/script.js"));
 
   // Photos
@@ -87,6 +95,11 @@ async function generer(dossier) {
       .toFile(path.join(sortie, "img/logo.webp"));
     const m = await sharp(path.join(sortie, "img/logo.webp")).metadata();
     images.logo = { src: "img/logo.webp", l: m.width, h: m.height };
+    // Version noire (pour les fonds clairs)
+    for (let i = 0; i < info.width * info.height; i++) rgba[i * 4] = rgba[i * 4 + 1] = rgba[i * 4 + 2] = 0;
+    await sharp(rgba, { raw: { width: info.width, height: info.height, channels: 4 } }).trim().webp({ quality: 90 })
+      .toFile(path.join(sortie, "img/logo-noir.webp"));
+    images.logoNoir = { src: "img/logo-noir.webp", l: m.width, h: m.height };
   }
   for (const [i, g] of (d.photos?.galerie || []).entries()) {
     const src = path.join(photos, g.fichier);
@@ -105,6 +118,7 @@ async function generer(dossier) {
   });
 
   const ctx = (racine) => ({ d, images, couleurs, langues, version, racine, credit: config.credit, qrSvg, urlMenu });
+  const { pageAccueil, pageMenu } = AMBIANCES[ambiance];
   await writeFile(path.join(sortie, "index.html"), pageAccueil(ctx(""), "fr"));
   await writeFile(path.join(sortie, "menu/index.html"), pageMenu(ctx("../"), "fr"));
   await writeFile(path.join(sortie, "qr/index.html"), pageQR(ctx("../")));
