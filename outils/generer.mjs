@@ -72,6 +72,22 @@ async function generer(dossier) {
     images.accueil = { petit: "img/accueil-900.webp", grand: "img/accueil-1800.webp" };
     images.og = "img/partage.jpg";
   }
+  if (d.photos?.logo) {
+    // Logo foncé sur fond clair → version blanche sur fond transparent, lisible sur la photo d'accueil
+    const src = path.join(photos, d.photos.logo);
+    if (!(await existe(src))) erreur(`[${dossier}] logo introuvable : photos/${d.photos.logo}`);
+    const { data, info } = await sharp(src).rotate().resize({ width: 900, withoutEnlargement: true })
+      .flatten({ background: "#ffffff" }).greyscale().raw().toBuffer({ resolveWithObject: true });
+    const rgba = Buffer.alloc(info.width * info.height * 4);
+    for (let i = 0; i < info.width * info.height; i++) {
+      const alpha = Math.max(0, Math.min(255, (235 - data[i]) * 1.35));
+      rgba[i * 4] = rgba[i * 4 + 1] = rgba[i * 4 + 2] = 255; rgba[i * 4 + 3] = alpha;
+    }
+    await sharp(rgba, { raw: { width: info.width, height: info.height, channels: 4 } }).trim().webp({ quality: 90 })
+      .toFile(path.join(sortie, "img/logo.webp"));
+    const m = await sharp(path.join(sortie, "img/logo.webp")).metadata();
+    images.logo = { src: "img/logo.webp", l: m.width, h: m.height };
+  }
   for (const [i, g] of (d.photos?.galerie || []).entries()) {
     const src = path.join(photos, g.fichier);
     if (!(await existe(src))) erreur(`[${dossier}] photo de galerie introuvable : photos/${g.fichier}`);

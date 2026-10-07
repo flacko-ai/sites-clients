@@ -22,6 +22,12 @@ Si la traduction arabe manque, le texte français est utilisé.
 | `photos.accueil` | `"accueil.jpg"` | grande photo du haut (de préférence horizontale) |
 | `photos.galerie` | `[{ "fichier": "…", "fr": "légende", "ar": "…" }]` | 6 photos, c'est l'idéal |
 | `menu` | catégories → plats | `prix` en DA (nombre entier) ; `badges` : `maison`, `signature`, `vegetarien`, `nouveau`, `epice` |
+| `mode` | `"reservation"` (défaut) ou `"commande"` | `commande` : boutons « Commander sur WhatsApp » (restauration rapide, livraison) |
+| `horaires` vide `{}` | — | si les horaires sont inconnus, la carte des horaires et le statut « Ouvert/Fermé » sont masqués |
+| `photos.logo` | `"logo.png"` | facultatif : logo foncé sur fond clair, affiché en blanc à la place du nom sur la photo d'accueil |
+| `police_titre` | `"Kaushan Script"` | facultatif : police Google Fonts pour les titres (version française) |
+| `position_photo_accueil` | `"50% 20%"` | facultatif : quelle partie de la photo d'accueil garder visible (horizontal, vertical) |
+| `livraison` | `{ "note": {…}, "zones": [{ "quartiers": {…}, "prix": 300 }] }` | facultatif : section « Tarifs de livraison » par quartier |
 | `note_menu` | texte | facultatif, remplace « Prix en dinars algériens (DA), service compris. » |
 
 ## Photos

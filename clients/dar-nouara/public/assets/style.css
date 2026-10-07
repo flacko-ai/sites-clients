@@ -193,9 +193,16 @@ section { padding-block: 64px; }
   font-size: 13px; font-weight: 600; color: #fff;
   background: linear-gradient(transparent, rgb(0 0 0 / .65));
 }
+/* Nombre impair de photos sur téléphone : la dernière prend toute la largeur */
+.galerie button:last-child:nth-child(odd) { grid-column: span 2; aspect-ratio: 2 / 1; }
 @media (min-width: 720px) {
   .galerie { grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .galerie button:first-child { grid-row: span 2; aspect-ratio: auto; }
+  .galerie button:last-child:nth-child(odd) { grid-column: auto; aspect-ratio: 1; }
+  /* 5 photos : la première, en grand, occupe deux lignes */
+  .galerie[data-n="5"] button:first-child { grid-row: span 2; aspect-ratio: auto; }
+  .galerie[data-n="1"] { grid-template-columns: 1fr; }
+  .galerie[data-n="2"], .galerie[data-n="4"] { grid-template-columns: repeat(2, 1fr); }
+  .galerie[data-n="2"] button, .galerie[data-n="4"] button { aspect-ratio: 3 / 2; }
 }
 dialog.visionneuse { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 90vh; }
 dialog.visionneuse::backdrop { background: rgb(10 10 10 / .88); }
@@ -204,11 +211,24 @@ dialog.visionneuse p { color: #fff; text-align: center; margin: 10px 0 0; }
 dialog.visionneuse form { position: fixed; top: 14px; inset-inline-end: 14px; }
 dialog.visionneuse form button { width: 44px; height: 44px; border-radius: 50%; border: 0; font-size: 26px; line-height: 1; cursor: pointer; background: rgb(255 255 255 / .15); color: #fff; }
 
+/* ---------- Logo à la place du nom ---------- */
+.hero .h1-logo img { width: min(78vw, 420px); height: auto; filter: drop-shadow(0 4px 18px rgb(0 0 0 / .5)); }
+
+/* ---------- Livraison ---------- */
+.zones { list-style: none; margin: 0 auto; padding: 0; max-width: 760px; }
+.zones li { display: flex; align-items: baseline; gap: 10px; padding: 14px 0; border-bottom: 1px dashed var(--c-ligne); }
+.zones .quartiers { font-weight: 600; font-size: 15.5px; }
+.zones .pointilles { flex: 1; border-bottom: 2px dotted color-mix(in srgb, var(--c-doux) 35%, transparent); transform: translateY(-4px); min-width: 16px; }
+.zones .prix { font-weight: 800; color: var(--c-accent); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
 /* ---------- Horaires & accès ---------- */
 .infos { background: var(--c-principale); color: #f4efe6; }
 .infos .titre-section h2 { color: #fff; }
 .infos-grille { display: grid; gap: 22px; }
-@media (min-width: 860px) { .infos-grille { grid-template-columns: 1fr 1.3fr; } }
+@media (min-width: 860px) {
+  .infos-grille { grid-template-columns: 1fr 1.3fr; }
+  .infos-grille.seule { grid-template-columns: 1fr; max-width: 760px; margin-inline: auto; }
+}
 .carte {
   background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .12);
   border-radius: var(--rayon); padding: 24px;

@@ -1,0 +1,83 @@
+{
+  "statut": "proposition",
+  "exemple_fictif": false,
+  "url": "https://bun-and-fun.netlify.app",
+  "langues": ["fr", "ar"],
+  "mode": "commande",
+
+  "nom": { "fr": "Bun & Fun", "ar": "Bun & Fun" },
+  "type_cuisine": { "fr": "Smash burgers", "ar": "سماش برغر" },
+  "quartier": { "fr": "Saïd Hamdine, Alger", "ar": "سعيد حمدين، الجزائر العاصمة" },
+  "slogan": { "fr": "See you at your next bite.", "ar": "نلتقي في لقمتكم القادمة." },
+  "presentation": {
+    "fr": "Chez Bun & Fun, les burgers sont « smashés » à la minute sur la plaque : viande hachée croustillante, fromage fondant et sauces maison. À déguster sur place à Saïd Hamdine, à emporter, ou en livraison partout dans Alger.",
+    "ar": "في Bun & Fun، يُحضَّر البرغر على طريقة «السماش» في الحين على الصفيحة: لحم مفروم مقرمش، جبن ذائب وصلصات منزلية. تذوّقوه في المحل بسعيد حمدين، أو خذوه معكم، أو اطلبوه بالتوصيل في كل أنحاء العاصمة."
+  },
+  "points_forts": [
+    { "icone": "chef", "fr": "Smashés à la minute", "ar": "يُحضَّر في الحين" },
+    { "icone": "famille", "fr": "Sur place & à emporter", "ar": "في المحل وللأخذ" },
+    { "icone": "livraison", "fr": "Livraison dans tout Alger", "ar": "توصيل في كل العاصمة" }
+  ],
+
+  "telephone": "0551 93 15 28",
+  "whatsapp": "0551 93 15 28",
+  "instagram": "bunandfun.dz",
+  "adresse": { "fr": "Saïd Hamdine, Bir Mourad Raïs, 16000 Alger", "ar": "سعيد حمدين، بئر مراد رايس، الجزائر العاصمة" },
+  "recherche_google_maps": "Bun & Fun, Said Hamdine, Bir Mourad Rais, Alger",
+  "lien_google_maps": "https://maps.app.goo.gl/dwjBCzFWPXA7xSpe6",
+
+  "horaires": {},
+
+  "couleurs": { "principale": "#171412", "accent": "#d9932b", "fond": "#f7f2ea" },
+  "police_titre": "Kaushan Script",
+  "position_photo_accueil": "50% 12%",
+
+  "photos": {
+    "accueil": "devanture.jpg",
+    "logo": "logo.png",
+    "galerie": [
+      { "fichier": "burgers.jpg", "fr": "Nos smash burgers", "ar": "سماش برغر" },
+      { "fichier": "sandwichs.jpg", "fr": "Sandwich steak", "ar": "ساندويتش ستيك" },
+      { "fichier": "devanture-nuit.jpg", "fr": "Bun & Fun, le soir", "ar": "Bun & Fun في المساء" },
+      { "fichier": "salle.jpg", "fr": "La salle", "ar": "القاعة" },
+      { "fichier": "affiche.jpg", "fr": "Smash Burgers", "ar": "سماش برغر" }
+    ]
+  },
+
+  "menu": [
+    {
+      "categorie": { "fr": "Burgers & sandwichs", "ar": "البرغر والساندويتشات" },
+      "plats": [
+        { "nom": { "fr": "Smash", "ar": "سماش" }, "description": { "fr": "Viande hachée, cornichons, oignons, sauce", "ar": "لحم مفروم، خيار مخلل، بصل، صلصة" }, "prix": 500, "badges": ["signature"] },
+        { "nom": { "fr": "Pastrami", "ar": "باسترامي" }, "description": { "fr": "Viande hachée, pastrami, cornichons, oignons, sauce BBQ", "ar": "لحم مفروم، باسترامي، خيار مخلل، بصل، صلصة باربيكيو" }, "prix": 800 },
+        { "nom": { "fr": "Sandwich steak", "ar": "ساندويتش ستيك" }, "description": { "fr": "Steak, poivrons, oignons caramélisés, sauce", "ar": "ستيك، فلفل، بصل مكرمل، صلصة" }, "prix": 800 }
+      ]
+    },
+    {
+      "categorie": { "fr": "Accompagnements", "ar": "المرافقات" },
+      "plats": [
+        { "nom": { "fr": "Frites", "ar": "بطاطا مقلية" }, "prix": 150 }
+      ]
+    }
+  ],
+
+  "livraison": {
+    "note": {
+      "fr": "Les tarifs peuvent légèrement varier selon le trajet. Pour toute question : 0563 92 83 29 ou en message sur Instagram.",
+      "ar": "قد تختلف الأسعار قليلاً حسب المسار. لأي استفسار: 0563 92 83 29 أو برسالة على إنستغرام."
+    },
+    "zones": [
+      { "quartiers": { "fr": "Saïd Hamdine · Hydra · Sidi Yahia", "ar": "سعيد حمدين · حيدرة · سيدي يحيى" }, "prix": 300 },
+      { "quartiers": { "fr": "Val d'Hydra · El Mouradia", "ar": "فال دحيدرة · المرادية" }, "prix": 400 },
+      { "quartiers": { "fr": "Ben Aknoun · Bir Khadem · Tixeraïne · El Biar · Telemly", "ar": "بن عكنون · بئر خادم · تيكسرايين · الأبيار · تليملي" }, "prix": 500 },
+      { "quartiers": { "fr": "Garidi · Chevalley · Alger Centre · Oued Romane · Dely Brahim", "ar": "قاريدي · شوفالي · الجزائر الوسطى · وادي الرمان · دالي إبراهيم" }, "prix": 600 },
+      { "quartiers": { "fr": "Kouba · Hussein Dey · Bab El Oued · Chéraga", "ar": "القبة · حسين داي · باب الوادي · الشراقة" }, "prix": 700 },
+      { "quartiers": { "fr": "El Harrach · Les Pins · Beni Messous", "ar": "الحراش · لي بان · بني مسوس" }, "prix": 800 },
+      { "quartiers": { "fr": "Sebala", "ar": "السبالة" }, "prix": 900 },
+      { "quartiers": { "fr": "Staouéli · Aïn Benian · Baba Hassen · Saoula", "ar": "سطاوالي · عين البنيان · بابا حسن · السحاولة" }, "prix": 1000 },
+      { "quartiers": { "fr": "Les Bananiers · Bab Ezzouar", "ar": "لي بنانيي · باب الزوار" }, "prix": 1000 },
+      { "quartiers": { "fr": "Sidi Fredj", "ar": "سيدي فرج" }, "prix": 1200 },
+      { "quartiers": { "fr": "Zéralda · Baïnem", "ar": "زرالدة · بينام" }, "prix": 1300 }
+    ]
+  }
+}

@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap">
 <link rel="preload" as="image" imagesrcset="../img/accueil-900.webp 900w, ../img/accueil-1800.webp 1800w" imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="../assets/style.css?v=1dcc0826">
+<link rel="stylesheet" href="../assets/style.css?v=62188fca">
 <style>:root{--c-principale:#1f3a33;--c-accent:#c08a3e;--c-fond:#f8f3ea}</style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -33,6 +33,7 @@
     <nav class="nav" aria-label="Navigation">
       <a href="#menu">القائمة</a>
       <a href="#galerie">الصور</a>
+      
       <a href="#horaires">أوقات العمل</a>
       <a href="#acces">العنوان</a>
     </nav>
@@ -183,7 +184,7 @@
 <section id="galerie" aria-labelledby="titre-galerie">
   <div class="conteneur">
     <header class="titre-section apparait"><p class="surtitre">بالصور</p><h2 id="titre-galerie">معرض الصور</h2><svg class="ornement" viewBox="0 0 72 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h26M46 6h26"/><path d="M36 1l5 5-5 5-5-5z"/><circle cx="29" cy="6" r="1.2" fill="currentColor"/><circle cx="43" cy="6" r="1.2" fill="currentColor"/></svg></header>
-    <div class="galerie apparait">
+    <div class="galerie apparait" data-n="6">
       <button type="button" data-grande="../img/galerie-01-1600.webp" data-legende="كسكسي الجمعة" aria-label="كسكسي الجمعة">
         <img src="../img/galerie-01-700.webp" alt="كسكسي الجمعة" width="700" height="700" loading="lazy" decoding="async">
         <span>كسكسي الجمعة</span>
@@ -213,9 +214,11 @@
 </section>
 <dialog class="visionneuse" aria-label="معرض الصور"><form method="dialog"><button aria-label="إغلاق">×</button></form><img alt=""><p></p></dialog>
 
+
+
 <section class="infos" id="horaires" aria-labelledby="titre-infos">
   <div class="conteneur">
-    <header class="titre-section apparait"><p class="surtitre">الحجز</p><h2 id="titre-infos">زورونا</h2><svg class="ornement" viewBox="0 0 72 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h26M46 6h26"/><path d="M36 1l5 5-5 5-5-5z"/><circle cx="29" cy="6" r="1.2" fill="currentColor"/><circle cx="43" cy="6" r="1.2" fill="currentColor"/></svg></header>
+    <header class="titre-section apparait"><p class="surtitre">معلومات عملية</p><h2 id="titre-infos">زورونا</h2><svg class="ornement" viewBox="0 0 72 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h26M46 6h26"/><path d="M36 1l5 5-5 5-5-5z"/><circle cx="29" cy="6" r="1.2" fill="currentColor"/><circle cx="43" cy="6" r="1.2" fill="currentColor"/></svg></header>
     <div class="infos-grille">
       <div class="carte apparait">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg>أوقات العمل</h3>
@@ -274,6 +277,6 @@
 </nav>
 <script type="application/json" id="donnees-horaires">{"dimanche":["12:00-15:30","19:00-23:00"],"lundi":["12:00-15:30","19:00-23:00"],"mardi":["12:00-15:30","19:00-23:00"],"mercredi":["12:00-15:30","19:00-23:00"],"jeudi":["12:00-15:30","19:00-00:00"],"vendredi":["13:30-16:00","19:00-00:00"],"samedi":[]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"دار نوّارة","servesCuisine":"مطبخ عاصمي تقليدي","telephone":"+213550000000","address":{"@type":"PostalAddress","streetAddress":"سيدي يحيى، حيدرة، الجزائر العاصمة","addressLocality":"Alger","addressCountry":"DZ"},"priceRange":"DA","url":"https://dar-nouara.netlify.app","hasMenu":"https://dar-nouara.netlify.app/ar/menu/","sameAs":["https://www.instagram.com/dar.nouara.exemple/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"19:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"12:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"19:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"12:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"19:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"12:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"19:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"12:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"19:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"13:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"19:00","closes":"00:00"}]}</script>
-<script src="../assets/script.js?v=1dcc0826" defer></script>
+<script src="../assets/script.js?v=62188fca" defer></script>
 </body>
 </html>

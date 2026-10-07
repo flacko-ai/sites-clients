@@ -1,0 +1,3 @@
+# Site en proposition : non indexé (voir la balise noindex).
+User-agent: *
+Disallow:

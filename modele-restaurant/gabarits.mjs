@@ -17,6 +17,7 @@ const UI = {
     galerie: "Galerie",
     enImages: "En images",
     infos: "Nous trouver",
+    infosPratiques: "Infos pratiques",
     horaires: "Horaires",
     acces: "Adresse & accès",
     itineraire: "Itinéraire",
@@ -38,7 +39,19 @@ const UI = {
       ? "<strong>Proposition</strong> · Site de démonstration — restaurant fictif"
       : `<strong>Proposition</strong> · Maquette préparée pour ${d.nomTexte} — non publiée`,
     messageWa: (nom) => `Bonjour ${nom}, je souhaite réserver une table pour ___ personnes, le ___ à ___. Merci !`,
-    credit: "Site réalisé par"
+    credit: "Site réalisé par",
+    commande: {
+      reserverWa: "Commander sur WhatsApp",
+      reserverCourt: "Commander",
+      reservation: "Commande",
+      reserverTitre: "Commandez en un message",
+      reserverTexte: "Envoyez-nous votre commande sur WhatsApp ou appelez-nous : sur place, à emporter ou en livraison.",
+      messageWa: (nom) => `Bonjour ${nom}, je voudrais commander : ___. Sur place / à emporter / livraison à : ___. Merci !`
+    },
+    livraison: "Livraison",
+    livraisonTitre: "Tarifs de livraison",
+    livraisonNote: "Les frais de livraison varient selon votre quartier.",
+    zone: "Quartiers"
   },
   ar: {
     nav: { menu: "القائمة", galerie: "الصور", horaires: "أوقات العمل", acces: "العنوان" },
@@ -53,6 +66,7 @@ const UI = {
     galerie: "معرض الصور",
     enImages: "بالصور",
     infos: "زورونا",
+    infosPratiques: "معلومات عملية",
     horaires: "أوقات العمل",
     acces: "العنوان والوصول",
     itineraire: "الاتجاهات",
@@ -74,9 +88,23 @@ const UI = {
       ? "<strong>اقتراح</strong> · موقع تجريبي — مطعم وهمي"
       : `<strong>اقتراح</strong> · نموذج موقع مُعدّ لـ ${d.nomTexte} — غير منشور`,
     messageWa: (nom) => `السلام عليكم ${nom}، أرغب في حجز طاولة لـ ___ أشخاص، يوم ___ على الساعة ___. شكراً!`,
-    credit: "تصميم الموقع:"
+    credit: "تصميم الموقع:",
+    commande: {
+      reserverWa: "اطلب عبر واتساب",
+      reserverCourt: "اطلب",
+      reservation: "الطلبات",
+      reserverTitre: "اطلبوا برسالة واحدة",
+      reserverTexte: "أرسلوا طلبكم عبر واتساب أو اتصلوا بنا: في المحل، للأخذ أو بالتوصيل.",
+      messageWa: (nom) => `السلام عليكم ${nom}، أريد أن أطلب: ___. في المحل / للأخذ / توصيل إلى: ___. شكراً!`
+    },
+    livraison: "التوصيل",
+    livraisonTitre: "أسعار التوصيل",
+    livraisonNote: "تختلف أسعار التوصيل حسب الحي.",
+    zone: "الأحياء"
   }
 };
+// Textes de l'interface, adaptés au mode du restaurant ("reservation" par défaut, ou "commande" pour la restauration rapide)
+const textes = (c, lang) => (c.d.mode === "commande" ? { ...UI[lang], ...UI[lang].commande } : UI[lang]);
 const ORDRE_JOURS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
 
 // ---------- Petits utilitaires ----------
@@ -97,7 +125,7 @@ export const telInternational = (tel) => {
 };
 const lienTel = (tel) => `tel:+${telInternational(tel)}`;
 const lienWa = (c, lang) =>
-  `https://wa.me/${telInternational(c.d.whatsapp || c.d.telephone)}?text=${encodeURIComponent(UI[lang].messageWa(tr(c.d.nom, lang)))}`;
+  `https://wa.me/${telInternational(c.d.whatsapp || c.d.telephone)}?text=${encodeURIComponent(textes(c, lang).messageWa(tr(c.d.nom, lang)))}`;
 const lienInsta = (compte) => `https://www.instagram.com/${String(compte).replace(/^@/, "")}/`;
 const requeteMaps = (d) => encodeURIComponent(d.recherche_google_maps || tr(d.adresse, "fr"));
 const lienItineraire = (d) => d.lien_google_maps || `https://www.google.com/maps/dir/?api=1&destination=${requeteMaps(d)}`;
@@ -110,9 +138,11 @@ const autreLangue = (c, lang, sousChemin) =>
 function tete(c, lang, { titre, description, chemin, prechargerAccueil = false }) {
   const d = c.d;
   const nonIndexe = d.statut !== "en-ligne";
-  const polices = lang === "ar"
+  const policeTitre = lang === "fr" && d.police_titre ? d.police_titre : "";
+  const polices = (lang === "ar"
     ? "family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800"
-    : "family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800";
+    : "family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800")
+    + (policeTitre ? `&family=${encodeURIComponent(policeTitre).replace(/%20/g, "+")}` : "");
   const urlPage = d.url ? `${d.url.replace(/\/$/, "")}/${chemin}` : "";
   const image = c.images.og ? `${d.url ? d.url.replace(/\/$/, "") + "/" : c.racine}${c.images.og}` : "";
   const alternatives = d.url && c.langues.length > 1
@@ -141,18 +171,18 @@ ${alternatives}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?${polices}&display=swap">
 ${prechargerAccueil && c.images.accueil ? `<link rel="preload" as="image" imagesrcset="${c.racine}${c.images.accueil.petit} 900w, ${c.racine}${c.images.accueil.grand} 1800w" imagesizes="100vw" fetchpriority="high">` : ""}
 <link rel="stylesheet" href="${c.racine}assets/style.css?v=${c.version}">
-<style>:root{--c-principale:${c.couleurs.principale};--c-accent:${c.couleurs.accent};--c-fond:${c.couleurs.fond}}</style>
+<style>:root{--c-principale:${c.couleurs.principale};--c-accent:${c.couleurs.accent};--c-fond:${c.couleurs.fond}${policeTitre ? `;--f-titre:"${echapper(policeTitre)}",Georgia,serif` : ""}}${c.d.position_photo_accueil ? `.hero img.fond{object-position:${echapper(c.d.position_photo_accueil)}}` : ""}</style>
 <script>document.documentElement.classList.add("js")</script>
 </head>`.replace(/\n{2,}/g, "\n");
 }
 
 const bandeau = (c, lang) =>
-  c.d.statut !== "en-ligne" ? `<div class="bandeau-proposition" role="note">${UI[lang].bandeau({ ...c.d, nomTexte: t(c.d.nom, lang) })}</div>` : "";
+  c.d.statut !== "en-ligne" ? `<div class="bandeau-proposition" role="note">${UI[lang].bandeau({ ...c.d, nomTexte: `<bdi>${t(c.d.nom, lang)}</bdi>` })}</div>` : "";
 
 const barreActions = (c, lang) => `
-<nav class="barre-actions" aria-label="${UI[lang].reservation}">
+<nav class="barre-actions" aria-label="${textes(c, lang).reservation}">
   <a class="btn btn-appel" href="${lienTel(c.d.telephone)}">${icones.telephone}${UI[lang].appeler}</a>
-  <a class="btn btn-whatsapp" href="${lienWa(c, lang)}" target="_blank" rel="noopener">${icones.whatsapp}${UI[lang].reserverCourt}</a>
+  <a class="btn btn-whatsapp" href="${lienWa(c, lang)}" target="_blank" rel="noopener">${icones.whatsapp}${textes(c, lang).reserverCourt}</a>
 </nav>`;
 
 // ---------- Blocs ----------
@@ -218,6 +248,8 @@ export function pageAccueil(c, lang) {
   const d = c.d, u = UI[lang];
   const nom = tr(d.nom, lang);
   const img = c.images.accueil;
+  const ut = textes(c, lang);
+  const aHoraires = Object.values(d.horaires || {}).some((x) => x.length);
   const titre = `${nom} — ${tr(d.type_cuisine, lang)} · ${tr(d.quartier, lang)}`;
   const description = tr(d.slogan, lang) || tr(d.presentation, lang).slice(0, 155);
   const chemin = lang === "ar" ? "ar/" : "";
@@ -254,7 +286,8 @@ ${bandeau(c, lang)}
     <nav class="nav" aria-label="Navigation">
       <a href="#menu">${u.nav.menu}</a>
       ${galerie ? `<a href="#galerie">${u.nav.galerie}</a>` : ""}
-      <a href="#horaires">${u.nav.horaires}</a>
+      ${d.livraison ? `<a href="#livraison">${u.livraison}</a>` : ""}
+      ${aHoraires ? `<a href="#horaires">${u.nav.horaires}</a>` : ""}
       <a href="#acces">${u.nav.acces}</a>
     </nav>
     ${c.langues.length > 1 ? `<a class="langue" href="${autreLangue(c, lang, "")}" hreflang="${lang === "fr" ? "ar" : "fr"}" lang="${lang === "fr" ? "ar" : "fr"}">${lang === "fr" ? "العربية" : "Français"}</a>` : ""}
@@ -266,11 +299,11 @@ ${bandeau(c, lang)}
   ${img ? `<img class="fond" src="${c.racine}${img.grand}" srcset="${c.racine}${img.petit} 900w, ${c.racine}${img.grand} 1800w" sizes="100vw" alt="" fetchpriority="high" decoding="async">` : ""}
   <div class="conteneur">
     <p class="surtitre">${t(d.type_cuisine, lang)} · ${t(d.quartier, lang)}</p>
-    <h1>${echapper(nom)}</h1>
+    ${c.images.logo ? `<h1 class="h1-logo"><img src="${c.racine}${c.images.logo.src}" alt="${echapper(nom)}" width="${c.images.logo.l}" height="${c.images.logo.h}"></h1>` : `<h1>${echapper(nom)}</h1>`}
     ${tr(d.slogan, lang) ? `<p class="slogan">${t(d.slogan, lang)}</p>` : ""}
-    <p class="statut" aria-live="polite"></p>
+    ${aHoraires ? '<p class="statut" aria-live="polite"></p>' : ""}
     <div class="actions">
-      <a class="btn btn-whatsapp" href="${lienWa(c, lang)}" target="_blank" rel="noopener">${icones.whatsapp}${u.reserverWa}</a>
+      <a class="btn btn-whatsapp" href="${lienWa(c, lang)}" target="_blank" rel="noopener">${icones.whatsapp}${ut.reserverWa}</a>
       <a class="btn btn-clair" href="#menu">${icones.menu}${u.voirMenu}</a>
     </div>
   </div>
@@ -291,21 +324,32 @@ ${galerie ? `
 <section id="galerie" aria-labelledby="titre-galerie">
   <div class="conteneur">
     <header class="titre-section apparait"><p class="surtitre">${u.enImages}</p><h2 id="titre-galerie">${u.galerie}</h2>${icones.ornement}</header>
-    <div class="galerie apparait">${galerie}
+    <div class="galerie apparait" data-n="${c.images.galerie.length}">${galerie}
     </div>
   </div>
 </section>
 <dialog class="visionneuse" aria-label="${u.galerie}"><form method="dialog"><button aria-label="${u.fermer}">×</button></form><img alt=""><p></p></dialog>` : ""}
 
-<section class="infos" id="horaires" aria-labelledby="titre-infos">
+${d.livraison ? `
+<section class="livraison" id="livraison" aria-labelledby="titre-livraison">
   <div class="conteneur">
-    <header class="titre-section apparait"><p class="surtitre">${u.reservation}</p><h2 id="titre-infos">${u.infos}</h2>${icones.ornement}</header>
-    <div class="infos-grille">
-      <div class="carte apparait">
+    <header class="titre-section apparait"><p class="surtitre">${u.livraison}</p><h2 id="titre-livraison">${u.livraisonTitre}</h2>${icones.ornement}</header>
+    <ul class="zones apparait">${(d.livraison.zones || []).map((z) => `
+      <li><span class="quartiers">${t(z.quartiers, lang)}</span><span class="pointilles"></span><span class="prix">${prix(z.prix, lang)}</span></li>`).join("")}
+    </ul>
+    <p class="note-menu">${tr(d.livraison.note, lang) ? t(d.livraison.note, lang) : u.livraisonNote}</p>
+  </div>
+</section>` : ""}
+
+<section class="infos" id="${aHoraires ? "horaires" : "infos"}" aria-labelledby="titre-infos">
+  <div class="conteneur">
+    <header class="titre-section apparait"><p class="surtitre">${u.infosPratiques}</p><h2 id="titre-infos">${u.infos}</h2>${icones.ornement}</header>
+    <div class="infos-grille${aHoraires ? "" : " seule"}">
+      ${aHoraires ? `<div class="carte apparait">
         <h3>${icones.horloge}${u.horaires}</h3>
         <p class="statut" aria-live="polite"></p>
         ${tableauHoraires(c, lang)}
-      </div>
+      </div>` : ""}
       <div class="carte apparait" id="acces">
         <h3>${icones.lieu}${u.acces}</h3>
         <p class="adresse">${t(d.adresse, lang)}</p>
@@ -321,10 +365,10 @@ ${galerie ? `
 
 <section class="reservation" id="reserver">
   <div class="conteneur apparait">
-    <header class="titre-section"><p class="surtitre">${u.reservation}</p><h2>${u.reserverTitre}</h2>${icones.ornement}</header>
-    <p>${u.reserverTexte}</p>
+    <header class="titre-section"><p class="surtitre">${ut.reservation}</p><h2>${ut.reserverTitre}</h2>${icones.ornement}</header>
+    <p>${ut.reserverTexte}</p>
     <div class="actions">
-      <a class="btn btn-whatsapp" href="${lienWa(c, lang)}" target="_blank" rel="noopener">${icones.whatsapp}${u.reserverWa}</a>
+      <a class="btn btn-whatsapp" href="${lienWa(c, lang)}" target="_blank" rel="noopener">${icones.whatsapp}${ut.reserverWa}</a>
       <a class="btn btn-contour" href="${lienTel(d.telephone)}">${icones.telephone}${u.appeler}</a>
     </div>
   </div>
@@ -332,7 +376,7 @@ ${galerie ? `
 </main>
 ${piedDePage(c, lang)}
 ${barreActions(c, lang)}
-<script type="application/json" id="donnees-horaires">${JSON.stringify(d.horaires || {})}</script>
+${aHoraires ? `<script type="application/json" id="donnees-horaires">${JSON.stringify(d.horaires)}</script>` : ""}
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 <script src="${c.racine}assets/script.js?v=${c.version}" defer></script>
 </body>
