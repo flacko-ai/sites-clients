@@ -52,4 +52,5 @@ npm run nouveau -- nom-du-client          # prépare clients/nom-du-client/
 node outils/images-demo.mjs nom-du-client # visuels d'attente si des photos manquent
 npm run generer -- nom-du-client          # fabrique clients/nom-du-client/public/
 npm run generer -- --tous                 # refabrique tous les sites (après un changement du modèle)
+npm run maquette -- nom-du-client         # maquette HTML en un seul fichier (à envoyer par WhatsApp)
 ```

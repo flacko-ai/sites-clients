@@ -16,8 +16,13 @@ Il vend des sites vitrines à des commerces d'Alger (d'abord des restaurants).
 2. Remplir `clients/<dossier>/contenu.json` (voir `docs/MODELE-RESTAURANT.md`), traduire en arabe, `url` = `https://<dossier>.netlify.app`.
 3. Copier les photos dans `clients/<dossier>/photos/` ; s'il en manque : `node outils/images-demo.mjs <dossier>`.
 4. `npm run generer -- <dossier>` puis vérifier le rendu (Playwright, Chromium dans `/opt/pw-browsers/chromium`, largeur 390 px) en FR et AR.
-5. Commit (dossier client complet, y compris `public/`), push sur `main`.
-6. La mise en ligne est **automatique** : le workflow GitHub `.github/workflows/mise-en-ligne.yml` crée le projet
+5. **Livrable par défaut = maquette HTML** (demande du propriétaire) : `npm run maquette -- <dossier>` crée
+   `clients/<dossier>/maquette/<dossier>.html` (+ `-ar.html`), fichiers autonomes (style, script, photos intégrés),
+   à envoyer au propriétaire avec SendUserFile. Commit + push sur `main`.
+6. **Netlify seulement sur demande** : `"publier": false` par défaut dans contenu.json → le robot ignore le client.
+   Quand le propriétaire demande la mise en ligne : `"publier": true`, régénérer, push, puis lancer le workflow
+   (actions_run_trigger `mise-en-ligne.yml`, input `clients` = dossier) si `public/` n'a pas changé.
+   Le robot ne se déclenche que sur les changements de `clients/*/public/`. La mise en ligne est alors **automatique** : le workflow GitHub `.github/workflows/mise-en-ligne.yml` crée le projet
    Netlify (nom tiré de `url`) et publie chaque client modifié à chaque push sur `main` (secret `NETLIFY_AUTH_TOKEN`).
    Vérifier le résultat du workflow (outils GitHub `actions_list` / `get_job_logs`) puis donner le lien au propriétaire.
    Si le nom est déjà pris sur Netlify, changer `url`, régénérer (le QR code en dépend) et repousser.

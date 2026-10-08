@@ -5,7 +5,8 @@
   "description": "Sites vitrines des clients (un dossier par client dans clients/).",
   "scripts": {
     "generer": "node outils/generer.mjs",
-    "nouveau": "node outils/nouveau-client.mjs"
+    "nouveau": "node outils/nouveau-client.mjs",
+    "maquette": "node outils/maquette.mjs"
   },
   "devDependencies": {
     "qrcode": "^1.5.4",

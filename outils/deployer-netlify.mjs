@@ -34,6 +34,7 @@ async function api(methode, chemin, corps, type = "application/json") {
 async function deployer(dossier) {
   const base = path.join(CLIENTS, dossier);
   const d = JSON.parse(await readFile(path.join(base, "contenu.json"), "utf8"));
+  if (d.publier !== true) { console.log(`- ${dossier} : maquette seulement ("publier" n'est pas true), non publié sur Netlify.`); return; }
   const m = /^https:\/\/([a-z0-9-]+)\.netlify\.app/.exec(d.url || "");
   if (!m) { console.log(`- ${dossier} : "url" n'est pas une adresse *.netlify.app, ignoré.`); return; }
   const nom = m[1];

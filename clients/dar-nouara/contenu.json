@@ -1,5 +1,6 @@
 {
   "statut": "proposition",
+  "publier": true,
   "exemple_fictif": true,
   "url": "https://dar-nouara.netlify.app",
   "langues": ["fr", "ar"],

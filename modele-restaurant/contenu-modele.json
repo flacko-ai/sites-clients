@@ -1,5 +1,6 @@
 {
   "statut": "proposition",
+  "publier": false,
   "exemple_fictif": false,
   "url": "https://nom-du-client.netlify.app",
   "langues": ["fr", "ar"],

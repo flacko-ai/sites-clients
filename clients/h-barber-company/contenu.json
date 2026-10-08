@@ -1,5 +1,6 @@
 {
   "statut": "proposition",
+  "publier": true,
   "exemple_fictif": false,
   "url": "https://h-barber-company.netlify.app",
   "langues": ["fr", "ar"],
