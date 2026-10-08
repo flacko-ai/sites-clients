@@ -15,10 +15,11 @@ import * as classique from "../modele-restaurant/gabarits.mjs";
 import * as urbain from "../modele-restaurant/ambiances/urbain.mjs";
 import * as barbier from "../modele-restaurant/ambiances/barbier.mjs";
 import * as patisserie from "../modele-restaurant/ambiances/patisserie.mjs";
+import * as maison from "../modele-restaurant/ambiances/maison.mjs";
 
 const { pageQR, tr } = classique;
 // Ambiances disponibles (champ "ambiance" de contenu.json) ; "classique" par défaut.
-const AMBIANCES = { classique, urbain, barbier, patisserie };
+const AMBIANCES = { classique, urbain, barbier, patisserie, maison };
 
 const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const MODELE = path.join(RACINE, "modele-restaurant");
@@ -119,6 +120,16 @@ async function generer(dossier) {
     await sharp(src).resize({ width: 600, withoutEnlargement: true }).webp({ quality: 92, alphaQuality: 100 }).toFile(path.join(sortie, "img/logo-entete.webp"));
     const m = await sharp(path.join(sortie, "img/logo-entete.webp")).metadata();
     images.logoEntete = { src: "img/logo-entete.webp", l: m.width, h: m.height };
+  }
+
+  // Espaces (enseignes associées, ambiance maison)
+  images.espaces = [];
+  for (const [i, v] of (d.photos?.espaces || []).entries()) {
+    const src = path.join(photos, v.fichier);
+    if (!(await existe(src))) erreur(`[${dossier}] photo d'espace introuvable : photos/${v.fichier}`);
+    const n = String(i + 1).padStart(2, "0");
+    const dim = await traiterImage(src, path.join(sortie, `img/espace-${n}-800.webp`), 800);
+    images.espaces.push({ petit: `img/espace-${n}-800.webp`, legende: v, detail: v.detail, cle: v.cle, ...dim });
   }
 
   // Vitrines (catégories de produits illustrées, ambiance pâtisserie)

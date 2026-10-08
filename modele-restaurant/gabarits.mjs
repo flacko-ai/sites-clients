@@ -141,7 +141,9 @@ function tete(c, lang, { titre, description, chemin, prechargerAccueil = false }
   const urbain = d.ambiance === "urbain";
   const policeTitre = lang === "fr" && d.police_titre && !urbain ? d.police_titre : "";
   const barbier = d.ambiance === "barbier";
-  const polices = d.ambiance === "patisserie"
+  const polices = d.ambiance === "maison"
+    ? "family=Marcellus&family=Outfit:wght@300;400;500;700" + (lang === "ar" ? "&family=El+Messiri:wght@400;600;700&family=Noto+Kufi+Arabic:wght@400;500" : "")
+    : d.ambiance === "patisserie"
     ? (lang === "ar"
       ? "family=Aref+Ruqaa:wght@400;700&family=Noto+Kufi+Arabic:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400"
       : "family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400&family=Jost:wght@400;500;600&family=Aref+Ruqaa:wght@700")

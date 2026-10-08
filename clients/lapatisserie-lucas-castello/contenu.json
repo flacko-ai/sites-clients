@@ -1,0 +1,435 @@
+{
+  "statut": "proposition",
+  "publier": false,
+  "exemple_fictif": false,
+  "url": "https://lapatisserie-lucas-castello.netlify.app",
+  "langues": [
+    "fr",
+    "ar"
+  ],
+  "ambiance": "maison",
+  "nom": {
+    "fr": "La Pâtisserie par Lucas Castello",
+    "ar": "La Pâtisserie par Lucas Castello"
+  },
+  "type_cuisine": {
+    "fr": "Pâtisserie, boulangerie & salon",
+    "ar": "حلويات، مخبزة وصالون"
+  },
+  "quartier": {
+    "fr": "Alger",
+    "ar": "الجزائر العاصمة"
+  },
+  "accroche": {
+    "fr": "Le savoir-faire de la pâtisserie française, une inspiration algérienne, huit boutiques à Alger.",
+    "ar": "حِرفية الحلويات الفرنسية بلمسة جزائرية، في ثماني محلات بالعاصمة."
+  },
+  "maison": {
+    "fr": [
+      "Entremets, macarons, viennoiseries et pains : la vitrine suit la tradition de la pâtisserie française.",
+      "Les saveurs, elles, regardent aussi vers l'Algérie : la pistache revient dans plusieurs créations, et les boutiques sont pensées pour recevoir les familles."
+    ],
+    "ar": [
+      "إنتريميه، ماكارون، مخبوزات وخبز: واجهتنا وفيّة لتقاليد الحلويات الفرنسية.",
+      "أما النكهات فتنظر أيضاً إلى الجزائر: الفستق حاضر في عدة إبداعات، والمحلات مهيّأة لاستقبال العائلات."
+    ]
+  },
+  "telephone": "0549 65 11 72",
+  "instagram": "lapatisserieparlucascastello",
+  "adresse": {
+    "fr": "8 boutiques à Alger",
+    "ar": "8 محلات بالعاصمة"
+  },
+  "recherche_google_maps": "La Pâtisserie par Lucas Castello, Alger",
+  "horaires": {},
+  "boutiques": [
+    {
+      "nom": {
+        "fr": "Dely Ibrahim",
+        "ar": "دالي إبراهيم"
+      },
+      "telephone": "0549 65 11 72",
+      "repere": {
+        "fr": "Fédération algérienne de football",
+        "ar": "الاتحادية الجزائرية لكرة القدم"
+      },
+      "horaires": {
+        "dimanche": [
+          "06:00-21:00"
+        ],
+        "lundi": [
+          "06:00-21:00"
+        ],
+        "mardi": [
+          "06:00-21:00"
+        ],
+        "mercredi": [
+          "06:00-21:00"
+        ],
+        "jeudi": [
+          "06:00-22:00"
+        ],
+        "vendredi": [
+          "06:00-22:00"
+        ],
+        "samedi": [
+          "06:00-22:00"
+        ]
+      },
+      "espaces": [
+        "patisserie",
+        "encas"
+      ],
+      "recherche": "La Pâtisserie par Lucas Castello Dely Ibrahim, Alger"
+    },
+    {
+      "nom": {
+        "fr": "Aïn Allah",
+        "ar": "عين الله"
+      },
+      "telephone": "0549 87 31 62",
+      "repere": {
+        "fr": "Trémie, direction FAF",
+        "ar": "النفق، اتجاه الاتحادية"
+      },
+      "horaires": {
+        "dimanche": [
+          "06:00-00:00"
+        ],
+        "lundi": [
+          "06:00-00:00"
+        ],
+        "mardi": [
+          "06:00-00:00"
+        ],
+        "mercredi": [
+          "06:00-00:00"
+        ],
+        "jeudi": [
+          "06:00-00:00"
+        ],
+        "vendredi": [
+          "06:00-00:00"
+        ],
+        "samedi": [
+          "06:00-00:00"
+        ]
+      },
+      "espaces": [
+        "patisserie",
+        "encas",
+        "sosundae"
+      ],
+      "recherche": "La Pâtisserie par Lucas Castello Aïn Allah, Alger"
+    },
+    {
+      "nom": {
+        "fr": "Hydra",
+        "ar": "حيدرة"
+      },
+      "telephone": "0555 43 40 35",
+      "repere": {
+        "fr": "Placette Ooredoo",
+        "ar": "ساحة أوريدو"
+      },
+      "horaires": {
+        "dimanche": [
+          "06:00-00:00"
+        ],
+        "lundi": [
+          "06:00-00:00"
+        ],
+        "mardi": [
+          "06:00-00:00"
+        ],
+        "mercredi": [
+          "06:00-00:00"
+        ],
+        "jeudi": [
+          "06:00-00:00"
+        ],
+        "vendredi": [
+          "06:00-00:00"
+        ],
+        "samedi": [
+          "06:00-00:00"
+        ]
+      },
+      "espaces": [
+        "patisserie",
+        "encas"
+      ],
+      "recherche": "La Pâtisserie par Lucas Castello Hydra, Alger"
+    },
+    {
+      "nom": {
+        "fr": "Chéraga",
+        "ar": "الشراقة"
+      },
+      "telephone": "0559 95 67 62",
+      "repere": {
+        "fr": "Cazanimo, Ouled Fayet",
+        "ar": "كازانيمو، أولاد فايت"
+      },
+      "horaires": {
+        "dimanche": [
+          "06:00-23:00"
+        ],
+        "lundi": [
+          "06:00-23:00"
+        ],
+        "mardi": [
+          "06:00-23:00"
+        ],
+        "mercredi": [
+          "06:00-23:00"
+        ],
+        "jeudi": [
+          "06:00-00:00"
+        ],
+        "vendredi": [
+          "06:00-00:00"
+        ],
+        "samedi": [
+          "06:00-00:00"
+        ]
+      },
+      "espaces": [
+        "patisserie",
+        "encas"
+      ],
+      "recherche": "La Pâtisserie par Lucas Castello Chéraga, Alger"
+    },
+    {
+      "nom": {
+        "fr": "Bouchaoui",
+        "ar": "بوشاوي"
+      },
+      "telephone": "0655 67 19 21",
+      "repere": {
+        "fr": "Hôtel Dar Diaf",
+        "ar": "فندق دار الضياف"
+      },
+      "horaires": {
+        "dimanche": [
+          "06:00-23:00"
+        ],
+        "lundi": [
+          "06:00-23:00"
+        ],
+        "mardi": [
+          "06:00-23:00"
+        ],
+        "mercredi": [
+          "06:00-23:00"
+        ],
+        "jeudi": [
+          "06:00-23:00"
+        ],
+        "vendredi": [
+          "06:00-23:00"
+        ],
+        "samedi": [
+          "06:00-23:00"
+        ]
+      },
+      "espaces": [
+        "patisserie",
+        "encas"
+      ],
+      "recherche": "La Pâtisserie par Lucas Castello Bouchaoui, Alger"
+    },
+    {
+      "nom": {
+        "fr": "Alger Centre",
+        "ar": "الجزائر الوسطى"
+      },
+      "telephone": "0551 36 22 43",
+      "repere": {
+        "fr": "Rue piétonne, face à la Grande Poste",
+        "ar": "الشارع المخصص للمشاة، مقابل البريد المركزي"
+      },
+      "horaires": null,
+      "espaces": [
+        "patisserie",
+        "encas"
+      ],
+      "recherche": "La Pâtisserie par Lucas Castello Alger Centre, Alger"
+    },
+    {
+      "nom": {
+        "fr": "Val d'Hydra",
+        "ar": "فال دحيدرة"
+      },
+      "telephone": "0795 43 81 73",
+      "repere": {
+        "fr": "Hôtel El Biar",
+        "ar": "فندق الأبيار"
+      },
+      "horaires": {
+        "dimanche": [
+          "06:00-21:00"
+        ],
+        "lundi": [
+          "06:00-21:00"
+        ],
+        "mardi": [
+          "06:00-21:00"
+        ],
+        "mercredi": [
+          "06:00-21:00"
+        ],
+        "jeudi": [
+          "06:00-23:00"
+        ],
+        "vendredi": [
+          "06:00-23:00"
+        ],
+        "samedi": [
+          "06:00-23:00"
+        ]
+      },
+      "espaces": [
+        "patisserie",
+        "encas"
+      ],
+      "recherche": "La Pâtisserie par Lucas Castello Val d'Hydra, Alger"
+    },
+    {
+      "nom": {
+        "fr": "Sidi Yahia",
+        "ar": "سيدي يحيى"
+      },
+      "telephone": "0551 34 26 69",
+      "repere": {
+        "fr": "Près du commissariat",
+        "ar": "قرب مركز الشرطة"
+      },
+      "horaires": {
+        "dimanche": [
+          "06:00-23:00"
+        ],
+        "lundi": [
+          "06:00-23:00"
+        ],
+        "mardi": [
+          "06:00-23:00"
+        ],
+        "mercredi": [
+          "06:00-23:00"
+        ],
+        "jeudi": [
+          "06:00-23:00"
+        ],
+        "vendredi": [
+          "06:00-23:00"
+        ],
+        "samedi": [
+          "06:00-23:00"
+        ]
+      },
+      "espaces": [
+        "patisserie",
+        "encas",
+        "sosundae"
+      ],
+      "recherche": "La Pâtisserie par Lucas Castello Sidi Yahia, Alger"
+    }
+  ],
+  "photos": {
+    "accueil": "accueil.jpg",
+    "vitrines": [
+      {
+        "fichier": "entremets.jpg",
+        "fr": "Entremets",
+        "ar": "إنتريميه",
+        "detail": {
+          "fr": "Chocolat, pistache",
+          "ar": "شوكولاتة، فستق"
+        }
+      },
+      {
+        "fichier": "viennoiseries.jpg",
+        "fr": "Viennoiseries",
+        "ar": "المخبوزات",
+        "detail": {
+          "fr": "Croissants et pains au chocolat",
+          "ar": "كرواسون وخبز بالشوكولاتة"
+        }
+      },
+      {
+        "fichier": "macarons.jpg",
+        "fr": "Macarons & petits gâteaux",
+        "ar": "ماكارون وحلويات صغيرة",
+        "detail": {
+          "fr": "Les douceurs de la vitrine",
+          "ar": "حلويات الواجهة"
+        }
+      },
+      {
+        "fichier": "vitrine.jpg",
+        "fr": "La grande vitrine",
+        "ar": "الواجهة الكبرى",
+        "detail": {
+          "fr": "Petits gâteaux, macarons, entremets",
+          "ar": "حلويات صغيرة، ماكارون، إنتريميه"
+        }
+      }
+    ],
+    "espaces": [
+      {
+        "fichier": "encas-burgers.jpg",
+        "cle": "encas",
+        "fr": "L'Encas",
+        "ar": "L'Encas",
+        "detail": {
+          "fr": "Salades, sandwichs froids, burgers et jus",
+          "ar": "سلطات، سندويتشات باردة، برغر وعصائر"
+        }
+      },
+      {
+        "fichier": "so-sundae.jpg",
+        "cle": "sosundae",
+        "fr": "Sō Sundae",
+        "ar": "Sō Sundae",
+        "detail": {
+          "fr": "Glaces, sundaes et pancakes",
+          "ar": "مثلجات، صنداي وبان كيك"
+        }
+      }
+    ],
+    "galerie": [
+      {
+        "fichier": "boutique-lustre.jpg",
+        "fr": "Le salon",
+        "ar": "الصالون"
+      },
+      {
+        "fichier": "salle.jpg",
+        "fr": "La salle, Sidi Yahia",
+        "ar": "القاعة، سيدي يحيى"
+      },
+      {
+        "fichier": "hydra.jpg",
+        "fr": "La boutique d'Hydra",
+        "ar": "محل حيدرة"
+      },
+      {
+        "fichier": "boutique-macarons.jpg",
+        "fr": "Le comptoir",
+        "ar": "الواجهة"
+      },
+      {
+        "fichier": "hydra-entree.jpg",
+        "fr": "L'entrée, Hydra",
+        "ar": "المدخل، حيدرة"
+      },
+      {
+        "fichier": "lavabo.jpg",
+        "fr": "Les détails",
+        "ar": "التفاصيل"
+      }
+    ]
+  },
+  "menu": []
+}

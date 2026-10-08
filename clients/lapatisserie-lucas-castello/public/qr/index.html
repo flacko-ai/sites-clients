@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>QR menu à imprimer — La Pâtisserie par Lucas Castello</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@500;700&family=Amiri:wght@700&family=Tajawal:wght@500;700&display=swap">
+<style>
+  :root { --p: #1f3a33; --a: #c08a3e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Manrope, system-ui, sans-serif; background: #e9e6e0; color: #1d1b18; }
+  .outils { max-width: 210mm; margin: 20px auto; padding: 0 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .outils button { font: inherit; font-weight: 700; padding: 12px 22px; border-radius: 999px; border: 0; background: var(--p); color: #fff; cursor: pointer; }
+  .outils p { margin: 0; font-size: 14px; color: #555; }
+  .feuille { width: 210mm; min-height: 297mm; margin: 0 auto 30px; background: #fff; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; box-shadow: 0 10px 40px rgb(0 0 0 / .15); }
+  .carte-qr { border: 1px dashed #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10mm; position: relative; }
+  .carte-qr::before { content: ""; position: absolute; inset: 6mm; border: 1.5px solid var(--a); border-radius: 6mm; pointer-events: none; }
+  .nom { font-family: "Cormorant Garamond", serif; font-size: 30pt; font-weight: 700; color: var(--p); margin: 0; line-height: 1; }
+  .nom-ar { font-family: Amiri, serif; font-size: 20pt; color: var(--p); margin: 2mm 0 0; }
+  .titre { font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 10pt; color: var(--a); margin: 4mm 0 4mm; }
+  .titre span { font-family: Tajawal, sans-serif; letter-spacing: 0; text-transform: none; font-size: 11pt; }
+  .qr { width: 46mm; height: 46mm; }
+  .qr svg { width: 100%; height: 100%; display: block; }
+  .consigne { font-size: 9pt; margin: 3mm 0 0; color: #444; }
+  .consigne[lang="ar"] { font-family: Tajawal, sans-serif; font-size: 10pt; margin-top: 1mm; }
+  .url { font-size: 8pt; color: #888; margin: 2mm 0 0; }
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; }
+    .outils { display: none; }
+    .feuille { box-shadow: none; margin: 0; }
+  }
+  @media screen and (max-width: 800px) {
+    .feuille { width: 100%; min-height: 0; grid-template-columns: 1fr; grid-template-rows: none; }
+    .carte-qr { min-height: 120mm; }
+    .carte-qr:not(:first-child) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="outils">
+  <button onclick="window.print()">🖨 Imprimer</button>
+  <p>Conseil : imprimez sur papier épais (250 g), puis découpez les 4 cartes.</p>
+</div>
+<div class="feuille">
+  <div class="carte-qr">
+    <p class="nom">La Pâtisserie par Lucas Castello</p>
+    
+    <p class="titre">Notre menu · <span lang="ar" dir="rtl">قائمة الطعام</span></p>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><path stroke="#1f3a33" d="M0 0.5h7m2 0h3m2 0h1m1 0h6m1 0h1m2 0h7M0 1.5h1m5 0h1m3 0h1m1 0h1m2 0h3m2 0h2m2 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h2m4 0h3m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m2 0h2m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h5m1 0h6m2 0h2m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m1 0h1m1 0h1m6 0h2m2 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h3m3 0h1m1 0h1m1 0h1m1 0h4M0 8.5h1m1 0h5m2 0h1m3 0h2m2 0h1m4 0h2m2 0h5M0 9.5h3m1 0h1m2 0h1m2 0h1m2 0h2m1 0h2m1 0h1m1 0h3m2 0h2m1 0h2m1 0h1M3 10.5h4m1 0h1m2 0h1m1 0h5m2 0h2m3 0h1m2 0h1m1 0h2M0 11.5h1m6 0h1m3 0h3m3 0h2m1 0h2m2 0h1m3 0h3M0 12.5h3m3 0h1m1 0h1m1 0h2m2 0h3m3 0h1m1 0h1m1 0h2m2 0h2m1 0h2M0 13.5h6m2 0h2m1 0h1m1 0h1m1 0h1m2 0h7m1 0h1m2 0h1m1 0h2M1 14.5h1m2 0h1m1 0h7m1 0h3m8 0h2m3 0h2M0 15.5h4m3 0h1m3 0h1m3 0h1m3 0h4m1 0h3m2 0h2M3 16.5h1m2 0h1m3 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1M3 17.5h1m4 0h7m1 0h1m1 0h6m2 0h2m1 0h2m1 0h1M0 18.5h2m1 0h1m1 0h2m2 0h1m5 0h2m1 0h1m1 0h2m2 0h5m1 0h2M1 19.5h1m5 0h2m3 0h5m4 0h1m2 0h1m2 0h5M1 20.5h2m1 0h3m5 0h1m1 0h1m3 0h2m5 0h1m1 0h3m1 0h1M0 21.5h1m1 0h1m5 0h1m4 0h1m1 0h2m2 0h3m1 0h1m2 0h1m2 0h1m2 0h1M0 22.5h1m3 0h1m1 0h4m2 0h2m3 0h2m1 0h1m3 0h6m1 0h1M0 23.5h1m2 0h1m4 0h2m1 0h2m1 0h1m1 0h1m3 0h4m4 0h1m1 0h2M0 24.5h1m4 0h2m7 0h1m2 0h1m4 0h1m1 0h5m2 0h1M8 25.5h1m2 0h1m5 0h4m2 0h2m3 0h1m1 0h1m1 0h1M0 26.5h7m2 0h1m1 0h3m1 0h3m4 0h3m1 0h1m1 0h1m1 0h2M0 27.5h1m5 0h1m1 0h4m2 0h1m2 0h3m1 0h4m3 0h3M0 28.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m5 0h1m1 0h6m1 0h1M0 29.5h1m1 0h3m1 0h1m1 0h3m3 0h2m2 0h4m1 0h3m2 0h2m1 0h2M0 30.5h1m1 0h3m1 0h1m1 0h1m3 0h5m1 0h1m1 0h3m1 0h1m1 0h2M0 31.5h1m5 0h1m3 0h1m1 0h1m2 0h1m4 0h3m3 0h1m1 0h3M0 32.5h7m1 0h1m1 0h3m1 0h4m1 0h2m1 0h4m1 0h1m3 0h1"/></svg>
+</div>
+    <p class="consigne">Scannez avec l'appareil photo de votre téléphone</p>
+    <p class="consigne" lang="ar" dir="rtl">امسح الرمز بكاميرا هاتفك</p>
+    <p class="url">lapatisserie-lucas-castello.netlify.app/menu/</p>
+  </div>
+  <div class="carte-qr">
+    <p class="nom">La Pâtisserie par Lucas Castello</p>
+    
+    <p class="titre">Notre menu · <span lang="ar" dir="rtl">قائمة الطعام</span></p>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><path stroke="#1f3a33" d="M0 0.5h7m2 0h3m2 0h1m1 0h6m1 0h1m2 0h7M0 1.5h1m5 0h1m3 0h1m1 0h1m2 0h3m2 0h2m2 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h2m4 0h3m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m2 0h2m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h5m1 0h6m2 0h2m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m1 0h1m1 0h1m6 0h2m2 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h3m3 0h1m1 0h1m1 0h1m1 0h4M0 8.5h1m1 0h5m2 0h1m3 0h2m2 0h1m4 0h2m2 0h5M0 9.5h3m1 0h1m2 0h1m2 0h1m2 0h2m1 0h2m1 0h1m1 0h3m2 0h2m1 0h2m1 0h1M3 10.5h4m1 0h1m2 0h1m1 0h5m2 0h2m3 0h1m2 0h1m1 0h2M0 11.5h1m6 0h1m3 0h3m3 0h2m1 0h2m2 0h1m3 0h3M0 12.5h3m3 0h1m1 0h1m1 0h2m2 0h3m3 0h1m1 0h1m1 0h2m2 0h2m1 0h2M0 13.5h6m2 0h2m1 0h1m1 0h1m1 0h1m2 0h7m1 0h1m2 0h1m1 0h2M1 14.5h1m2 0h1m1 0h7m1 0h3m8 0h2m3 0h2M0 15.5h4m3 0h1m3 0h1m3 0h1m3 0h4m1 0h3m2 0h2M3 16.5h1m2 0h1m3 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1M3 17.5h1m4 0h7m1 0h1m1 0h6m2 0h2m1 0h2m1 0h1M0 18.5h2m1 0h1m1 0h2m2 0h1m5 0h2m1 0h1m1 0h2m2 0h5m1 0h2M1 19.5h1m5 0h2m3 0h5m4 0h1m2 0h1m2 0h5M1 20.5h2m1 0h3m5 0h1m1 0h1m3 0h2m5 0h1m1 0h3m1 0h1M0 21.5h1m1 0h1m5 0h1m4 0h1m1 0h2m2 0h3m1 0h1m2 0h1m2 0h1m2 0h1M0 22.5h1m3 0h1m1 0h4m2 0h2m3 0h2m1 0h1m3 0h6m1 0h1M0 23.5h1m2 0h1m4 0h2m1 0h2m1 0h1m1 0h1m3 0h4m4 0h1m1 0h2M0 24.5h1m4 0h2m7 0h1m2 0h1m4 0h1m1 0h5m2 0h1M8 25.5h1m2 0h1m5 0h4m2 0h2m3 0h1m1 0h1m1 0h1M0 26.5h7m2 0h1m1 0h3m1 0h3m4 0h3m1 0h1m1 0h1m1 0h2M0 27.5h1m5 0h1m1 0h4m2 0h1m2 0h3m1 0h4m3 0h3M0 28.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m5 0h1m1 0h6m1 0h1M0 29.5h1m1 0h3m1 0h1m1 0h3m3 0h2m2 0h4m1 0h3m2 0h2m1 0h2M0 30.5h1m1 0h3m1 0h1m1 0h1m3 0h5m1 0h1m1 0h3m1 0h1m1 0h2M0 31.5h1m5 0h1m3 0h1m1 0h1m2 0h1m4 0h3m3 0h1m1 0h3M0 32.5h7m1 0h1m1 0h3m1 0h4m1 0h2m1 0h4m1 0h1m3 0h1"/></svg>
+</div>
+    <p class="consigne">Scannez avec l'appareil photo de votre téléphone</p>
+    <p class="consigne" lang="ar" dir="rtl">امسح الرمز بكاميرا هاتفك</p>
+    <p class="url">lapatisserie-lucas-castello.netlify.app/menu/</p>
+  </div>
+  <div class="carte-qr">
+    <p class="nom">La Pâtisserie par Lucas Castello</p>
+    
+    <p class="titre">Notre menu · <span lang="ar" dir="rtl">قائمة الطعام</span></p>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><path stroke="#1f3a33" d="M0 0.5h7m2 0h3m2 0h1m1 0h6m1 0h1m2 0h7M0 1.5h1m5 0h1m3 0h1m1 0h1m2 0h3m2 0h2m2 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h2m4 0h3m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m2 0h2m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h5m1 0h6m2 0h2m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m1 0h1m1 0h1m6 0h2m2 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h3m3 0h1m1 0h1m1 0h1m1 0h4M0 8.5h1m1 0h5m2 0h1m3 0h2m2 0h1m4 0h2m2 0h5M0 9.5h3m1 0h1m2 0h1m2 0h1m2 0h2m1 0h2m1 0h1m1 0h3m2 0h2m1 0h2m1 0h1M3 10.5h4m1 0h1m2 0h1m1 0h5m2 0h2m3 0h1m2 0h1m1 0h2M0 11.5h1m6 0h1m3 0h3m3 0h2m1 0h2m2 0h1m3 0h3M0 12.5h3m3 0h1m1 0h1m1 0h2m2 0h3m3 0h1m1 0h1m1 0h2m2 0h2m1 0h2M0 13.5h6m2 0h2m1 0h1m1 0h1m1 0h1m2 0h7m1 0h1m2 0h1m1 0h2M1 14.5h1m2 0h1m1 0h7m1 0h3m8 0h2m3 0h2M0 15.5h4m3 0h1m3 0h1m3 0h1m3 0h4m1 0h3m2 0h2M3 16.5h1m2 0h1m3 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1M3 17.5h1m4 0h7m1 0h1m1 0h6m2 0h2m1 0h2m1 0h1M0 18.5h2m1 0h1m1 0h2m2 0h1m5 0h2m1 0h1m1 0h2m2 0h5m1 0h2M1 19.5h1m5 0h2m3 0h5m4 0h1m2 0h1m2 0h5M1 20.5h2m1 0h3m5 0h1m1 0h1m3 0h2m5 0h1m1 0h3m1 0h1M0 21.5h1m1 0h1m5 0h1m4 0h1m1 0h2m2 0h3m1 0h1m2 0h1m2 0h1m2 0h1M0 22.5h1m3 0h1m1 0h4m2 0h2m3 0h2m1 0h1m3 0h6m1 0h1M0 23.5h1m2 0h1m4 0h2m1 0h2m1 0h1m1 0h1m3 0h4m4 0h1m1 0h2M0 24.5h1m4 0h2m7 0h1m2 0h1m4 0h1m1 0h5m2 0h1M8 25.5h1m2 0h1m5 0h4m2 0h2m3 0h1m1 0h1m1 0h1M0 26.5h7m2 0h1m1 0h3m1 0h3m4 0h3m1 0h1m1 0h1m1 0h2M0 27.5h1m5 0h1m1 0h4m2 0h1m2 0h3m1 0h4m3 0h3M0 28.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m5 0h1m1 0h6m1 0h1M0 29.5h1m1 0h3m1 0h1m1 0h3m3 0h2m2 0h4m1 0h3m2 0h2m1 0h2M0 30.5h1m1 0h3m1 0h1m1 0h1m3 0h5m1 0h1m1 0h3m1 0h1m1 0h2M0 31.5h1m5 0h1m3 0h1m1 0h1m2 0h1m4 0h3m3 0h1m1 0h3M0 32.5h7m1 0h1m1 0h3m1 0h4m1 0h2m1 0h4m1 0h1m3 0h1"/></svg>
+</div>
+    <p class="consigne">Scannez avec l'appareil photo de votre téléphone</p>
+    <p class="consigne" lang="ar" dir="rtl">امسح الرمز بكاميرا هاتفك</p>
+    <p class="url">lapatisserie-lucas-castello.netlify.app/menu/</p>
+  </div>
+  <div class="carte-qr">
+    <p class="nom">La Pâtisserie par Lucas Castello</p>
+    
+    <p class="titre">Notre menu · <span lang="ar" dir="rtl">قائمة الطعام</span></p>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges"><path stroke="#1f3a33" d="M0 0.5h7m2 0h3m2 0h1m1 0h6m1 0h1m2 0h7M0 1.5h1m5 0h1m3 0h1m1 0h1m2 0h3m2 0h2m2 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h2m4 0h3m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m2 0h2m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h5m1 0h6m2 0h2m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m1 0h1m1 0h1m6 0h2m2 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h3m3 0h1m1 0h1m1 0h1m1 0h4M0 8.5h1m1 0h5m2 0h1m3 0h2m2 0h1m4 0h2m2 0h5M0 9.5h3m1 0h1m2 0h1m2 0h1m2 0h2m1 0h2m1 0h1m1 0h3m2 0h2m1 0h2m1 0h1M3 10.5h4m1 0h1m2 0h1m1 0h5m2 0h2m3 0h1m2 0h1m1 0h2M0 11.5h1m6 0h1m3 0h3m3 0h2m1 0h2m2 0h1m3 0h3M0 12.5h3m3 0h1m1 0h1m1 0h2m2 0h3m3 0h1m1 0h1m1 0h2m2 0h2m1 0h2M0 13.5h6m2 0h2m1 0h1m1 0h1m1 0h1m2 0h7m1 0h1m2 0h1m1 0h2M1 14.5h1m2 0h1m1 0h7m1 0h3m8 0h2m3 0h2M0 15.5h4m3 0h1m3 0h1m3 0h1m3 0h4m1 0h3m2 0h2M3 16.5h1m2 0h1m3 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1M3 17.5h1m4 0h7m1 0h1m1 0h6m2 0h2m1 0h2m1 0h1M0 18.5h2m1 0h1m1 0h2m2 0h1m5 0h2m1 0h1m1 0h2m2 0h5m1 0h2M1 19.5h1m5 0h2m3 0h5m4 0h1m2 0h1m2 0h5M1 20.5h2m1 0h3m5 0h1m1 0h1m3 0h2m5 0h1m1 0h3m1 0h1M0 21.5h1m1 0h1m5 0h1m4 0h1m1 0h2m2 0h3m1 0h1m2 0h1m2 0h1m2 0h1M0 22.5h1m3 0h1m1 0h4m2 0h2m3 0h2m1 0h1m3 0h6m1 0h1M0 23.5h1m2 0h1m4 0h2m1 0h2m1 0h1m1 0h1m3 0h4m4 0h1m1 0h2M0 24.5h1m4 0h2m7 0h1m2 0h1m4 0h1m1 0h5m2 0h1M8 25.5h1m2 0h1m5 0h4m2 0h2m3 0h1m1 0h1m1 0h1M0 26.5h7m2 0h1m1 0h3m1 0h3m4 0h3m1 0h1m1 0h1m1 0h2M0 27.5h1m5 0h1m1 0h4m2 0h1m2 0h3m1 0h4m3 0h3M0 28.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m5 0h1m1 0h6m1 0h1M0 29.5h1m1 0h3m1 0h1m1 0h3m3 0h2m2 0h4m1 0h3m2 0h2m1 0h2M0 30.5h1m1 0h3m1 0h1m1 0h1m3 0h5m1 0h1m1 0h3m1 0h1m1 0h2M0 31.5h1m5 0h1m3 0h1m1 0h1m2 0h1m4 0h3m3 0h1m1 0h3M0 32.5h7m1 0h1m1 0h3m1 0h4m1 0h2m1 0h4m1 0h1m3 0h1"/></svg>
+</div>
+    <p class="consigne">Scannez avec l'appareil photo de votre téléphone</p>
+    <p class="consigne" lang="ar" dir="rtl">امسح الرمز بكاميرا هاتفك</p>
+    <p class="url">lapatisserie-lucas-castello.netlify.app/menu/</p>
+  </div></div>
+</body>
+</html>

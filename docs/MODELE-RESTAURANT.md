@@ -29,6 +29,7 @@ Si la traduction arabe manque, le texte français est utilisé.
 | `citation`, `note_google` (barbier) | texte, `4.7` | facultatifs |
 | `photos.vitrines` (pâtisserie) | `[{ "fichier": "…", "fr": "Viennoiseries", "detail": {…} }]` | catégories de produits illustrées |
 | `photos.logo_detoure` (pâtisserie) | `"logo.png"` | logo déjà détouré (fond transparent), affiché au centre de l'en-tête |
+| `boutiques` (maison) | `[{ "nom", "telephone", "repere", "horaires", "espaces", "recherche" }]` | plusieurs adresses, statut « Ouvert » par boutique |
 | `mode` | `"reservation"` (défaut) ou `"commande"` | `commande` : boutons « Commander sur WhatsApp » (restauration rapide, livraison) |
 | `horaires` vide `{}` | — | si les horaires sont inconnus, la carte des horaires et le statut « Ouvert/Fermé » sont masqués |
 | `photos.logo` | `"logo.png"` | facultatif : logo foncé sur fond clair, affiché en blanc à la place du nom sur la photo d'accueil |
