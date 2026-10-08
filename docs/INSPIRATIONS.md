@@ -82,7 +82,7 @@ Les modèles gratuits de GitHub sont souvent basiques : ils servent pour l'organ
 | Client | Références | Effet marquant |
 |---|---|---|
 | Bun & Fun | (ambiance `urbain`) | menu en ticket de caisse |
-| H Barber Company (v1) | blackboxparis.com | accueil plein écran, menu flottant |
-| H Barber Company (v2, ambiance `capitonne`) | codrops/ScrollBlurTypography (n° 9), io23 scroll-driven | présentation qui sort du flou mot à mot ; fond cuir capitonné |
+| H Barber Company | blackboxparis.com | accueil plein écran, menu flottant (version retenue) |
+| (ambiance `capitonne`, proposée à H Barber, non retenue : réutilisable) | codrops/ScrollBlurTypography (n° 9), io23 scroll-driven | présentation qui sort du flou mot à mot ; fond cuir capitonné |
 | Signature Pâtisserie | maison-kayser.com | trait de signature doré qui se dessine |
 | La Pâtisserie Lucas Castello | maison-kayser.com | bande moutarde en diagonale |

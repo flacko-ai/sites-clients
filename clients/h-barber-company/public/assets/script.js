@@ -97,36 +97,6 @@
     dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
   }
 
-  // ---------- Texte qui sort du flou, mot à mot, au défilement ----------
-  // Adapté de codrops/ScrollBlurTypography (MIT, © Codrops), sans GSAP. Sans JS : texte net.
-  var flous = document.querySelectorAll(".flou-mots");
-  var mouvementOk = !window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (flous.length && mouvementOk) {
-    var blocs = [].map.call(flous, function (el) { return { el: el, mots: el.querySelectorAll(".mot") }; });
-    var enAttente = false;
-    var majFlou = function () {
-      enAttente = false;
-      var vh = window.innerHeight;
-      blocs.forEach(function (b) {
-        var r = b.el.getBoundingClientRect();
-        // 0 quand le haut du texte entre par le bas (85 %), 1 quand son bas atteint 60 % de l'écran
-        var debut = vh * 0.85, fin = vh * 0.6;
-        var p = (debut - r.top) / ((debut - fin) + r.height);
-        p = Math.max(0, Math.min(1, p));
-        var n = b.mots.length, largeur = 4;
-        b.mots.forEach(function (m, i) {
-          var l = Math.max(0, Math.min(1, (p * (n + largeur) - i) / largeur));
-          m.style.setProperty("--l", l.toFixed(3));
-        });
-      });
-    };
-    var demander = function () { if (!enAttente) { enAttente = true; requestAnimationFrame(majFlou); } };
-    document.documentElement.classList.add("flou-actif");
-    window.addEventListener("scroll", demander, { passive: true });
-    window.addEventListener("resize", demander);
-    majFlou();
-  }
-
   // ---------- Apparition douce ----------
   var aAnimer = document.querySelectorAll(".apparait");
   if ("IntersectionObserver" in window) {
