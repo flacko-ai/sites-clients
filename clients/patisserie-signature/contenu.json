@@ -1,6 +1,6 @@
 {
   "statut": "proposition",
-  "publier": true,
+  "publier": false,
   "exemple_fictif": false,
   "url": "https://patisserie-signature.netlify.app",
   "langues": ["fr", "ar"],
@@ -29,6 +29,7 @@
 
   "photos": {
     "accueil": "accueil.jpg",
+    "logo_detoure": "logo-signature.png",
     "vitrines": [
       { "fichier": "viennoiseries.jpg", "fr": "Viennoiseries", "ar": "المخبوزات", "detail": { "fr": "Croissants et pains au chocolat, chaque matin", "ar": "كرواسون وخبز بالشوكولاتة كل صباح" } },
       { "fichier": "boulangerie.jpg", "fr": "Boulangerie", "ar": "المخبزة", "detail": { "fr": "Baguettes et pains spéciaux", "ar": "باغيت وخبز خاص" } },

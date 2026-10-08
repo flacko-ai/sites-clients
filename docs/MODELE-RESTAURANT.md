@@ -28,6 +28,7 @@ Si la traduction arabe manque, le texte français est utilisé.
 | `variante` (barbier) | `"sombre"` | style « salon tout noir » : accueil plein écran, titres étroits en majuscules, menu flottant, cadres arrondis |
 | `citation`, `note_google` (barbier) | texte, `4.7` | facultatifs |
 | `photos.vitrines` (pâtisserie) | `[{ "fichier": "…", "fr": "Viennoiseries", "detail": {…} }]` | catégories de produits illustrées |
+| `photos.logo_detoure` (pâtisserie) | `"logo.png"` | logo déjà détouré (fond transparent), affiché au centre de l'en-tête |
 | `mode` | `"reservation"` (défaut) ou `"commande"` | `commande` : boutons « Commander sur WhatsApp » (restauration rapide, livraison) |
 | `horaires` vide `{}` | — | si les horaires sont inconnus, la carte des horaires et le statut « Ouvert/Fermé » sont masqués |
 | `photos.logo` | `"logo.png"` | facultatif : logo foncé sur fond clair, affiché en blanc à la place du nom sur la photo d'accueil |

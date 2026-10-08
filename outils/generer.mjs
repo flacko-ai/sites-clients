@@ -112,6 +112,15 @@ async function generer(dossier) {
     images.galerie.push({ petit: `img/galerie-${n}-700.webp`, grand: `img/galerie-${n}-1600.webp`, legende: g, ...dim });
   }
 
+  // Logo déjà détouré (fond transparent, couleurs d'origine) : utilisé tel quel
+  if (d.photos?.logo_detoure) {
+    const src = path.join(photos, d.photos.logo_detoure);
+    if (!(await existe(src))) erreur(`[${dossier}] logo introuvable : photos/${d.photos.logo_detoure}`);
+    await sharp(src).resize({ width: 600, withoutEnlargement: true }).webp({ quality: 92, alphaQuality: 100 }).toFile(path.join(sortie, "img/logo-entete.webp"));
+    const m = await sharp(path.join(sortie, "img/logo-entete.webp")).metadata();
+    images.logoEntete = { src: "img/logo-entete.webp", l: m.width, h: m.height };
+  }
+
   // Vitrines (catégories de produits illustrées, ambiance pâtisserie)
   images.vitrines = [];
   for (const [i, v] of (d.photos?.vitrines || []).entries()) {

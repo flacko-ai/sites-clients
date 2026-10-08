@@ -44,11 +44,24 @@ const TXT = {
 // Trait de signature (dessiné au chargement, voir patisserie.css)
 const SIGNATURE = `<svg class="p-trait" viewBox="0 0 420 60" aria-hidden="true"><path d="M4 42c38-6 70-30 92-31 14 0-6 30 6 31 16 1 30-28 44-27 10 1-4 24 8 24 20 0 44-22 66-24 26-2 18 20 40 19 30-1 70-14 156-22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
-const enTete = (c, lang, accueil, sousChemin) => `
+// En-tête : logo au centre, langue à gauche, « Commander » à droite, menu en dessous (ordinateur)
+const NAV = {
+  fr: [["vitrines", "Nos vitrines"], ["boutique", "La boutique"], ["acces", "Nous trouver"], ["commander", "Commander"]],
+  ar: [["vitrines", "واجهاتنا"], ["boutique", "المحل"], ["acces", "زورونا"], ["commander", "اطلب"]]
+};
+const enTete = (c, lang, accueil, sousChemin) => {
+  const d = c.d, logo = c.images.logoEntete, nom = t(d.nom_complet || d.nom, lang);
+  const base = accueil === "#haut" ? "" : accueil;
+  return `
 <header class="p-entete">
-  <a class="p-marque" href="${accueil}">${t(c.d.nom_complet || c.d.nom, lang)}</a>
-  ${c.langues.length > 1 ? `<a class="p-langue" href="${autreLangue(c, lang, sousChemin)}" lang="${lang === "fr" ? "ar" : "fr"}">${lang === "fr" ? "العربية" : "Français"}</a>` : ""}
+  <div class="p-entete-haut">
+    ${c.langues.length > 1 ? `<a class="p-langue" href="${autreLangue(c, lang, sousChemin)}" lang="${lang === "fr" ? "ar" : "fr"}">${lang === "fr" ? "العربية" : "FR"}</a>` : "<span></span>"}
+    <a class="p-logo" href="${accueil}" aria-label="${nom}">${logo ? `<img src="${c.racine}${logo.src}" alt="${nom}" width="${logo.l}" height="${logo.h}">` : `<span class="p-marque">${nom}</span>`}</a>
+    <a class="p-commander" href="${lienTel(d.telephone)}">${icones.telephone}<span>${lang === "fr" ? "Commander" : "اطلب"}</span></a>
+  </div>
+  <nav class="p-nav" aria-label="Navigation">${NAV[lang].map(([id, txt]) => `<a href="${base}#${id}">${txt}</a>`).join("")}</nav>
 </header>`;
+};
 
 function actions(c, lang, classe = "p-actions") {
   const d = c.d, x = TXT[lang];
@@ -136,7 +149,7 @@ ${d.citation ? `
 </section>` : ""}
 
 ${galerie ? `
-<section class="p-section" aria-labelledby="titre-boutique">
+<section class="p-section" id="boutique" aria-labelledby="titre-boutique">
   <h2 id="titre-boutique">${x.boutique}</h2>
   <div class="p-galerie" data-n="${c.images.galerie.length}">${galerie}
   </div>
@@ -160,7 +173,7 @@ ${galerie ? `
   </div>
 </section>
 
-<section class="p-section p-commande">
+<section class="p-section p-commande" id="commander">
   <h2>${x.commande}</h2>
   <p class="p-texte">${x.commandeTexte}</p>
   ${actions(c, lang)}
