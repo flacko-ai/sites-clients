@@ -173,3 +173,45 @@ dialog.visionneuse img { max-height: 82vh; margin: auto; }
 dialog.visionneuse p { color: #fff; text-align: center; margin: 10px 0 0; font-family: "Old Standard TT", serif; font-style: italic; }
 dialog.visionneuse form { position: fixed; top: 14px; inset-inline-end: 14px; }
 dialog.visionneuse form button { width: 44px; height: 44px; border-radius: 50%; border: 0; font-size: 26px; cursor: pointer; background: rgb(255 255 255 / .15); color: #fff; }
+
+/* ==========================================================================
+   Variante « sombre » (contenu.json → "variante": "sombre")
+   Le salon le soir : fond noir, moulures dessinées en filets clairs, photos plus
+   contrastées, le bleu du poteau comme seule couleur vive. La citation devient
+   un panneau éclairé, en clair sur le noir.
+   ========================================================================== */
+.sombre {
+  --mur: #000;
+  --encre: #f1eee8;
+  --gris: #9d9a93;
+  --moulure: rgb(255 255 255 / .1);
+  --ombre-moulure: rgb(255 255 255 / .22);
+  --poteau: #3d6bff;
+  --chene: #c49564;
+  background: #000; color: var(--encre);
+}
+.sombre .bandeau-proposition { background: #15140f; border-bottom: 1px solid var(--moulure); }
+.sombre .b-entete { background: rgb(0 0 0 / .82); border-bottom-color: var(--moulure); }
+.sombre .b-langue { border-color: var(--ombre-moulure); }
+.sombre .b-marque { color: var(--encre); }
+.sombre h2 { letter-spacing: -.01em; }
+.sombre .b-section { border-top-color: var(--moulure); }
+.sombre .b-cadre img { filter: contrast(1.08) saturate(.8) brightness(.92); }
+.sombre .b-poteau {
+  background: repeating-linear-gradient(135deg, var(--poteau) 0 10px, var(--encre) 10px 16px, #000 16px 26px, var(--encre) 26px 32px);
+  background-size: 100% 45.25px;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / .25), 0 0 22px rgb(61 107 255 / .35);
+}
+.sombre .b-note span { color: var(--chene); }
+.sombre .b-btn-noir { background: var(--encre); color: #000; }
+.sombre .b-btn-contour { background: transparent; border-color: var(--ombre-moulure); color: var(--encre); }
+.sombre .b-btn-contour:hover { background: rgb(255 255 255 / .06); }
+.sombre .b-citation { background: var(--encre); color: #000; }
+.sombre .b-citation .fr { color: #57544e; }
+.sombre .b-plan { background: #0d0d0d; }
+.sombre .b-plan iframe { filter: grayscale(1) invert(.92) contrast(.9) brightness(.9); }
+.sombre .b-pied { border-top-color: var(--moulure); }
+.sombre .b-pied .b-marque { color: var(--encre); }
+.sombre .b-barre-fixe { background: rgb(0 0 0 / .9); border-top-color: var(--moulure); }
+.sombre .b-tarifs li { border-bottom-color: var(--moulure); }
+.sombre .b-horaires div { border-bottom-color: var(--moulure); }

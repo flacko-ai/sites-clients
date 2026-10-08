@@ -4,6 +4,7 @@
   "url": "https://h-barber-company.netlify.app",
   "langues": ["fr", "ar"],
   "ambiance": "barbier",
+  "variante": "sombre",
 
   "nom": { "fr": "H Barber Company", "ar": "H Barber Company" },
   "type_cuisine": { "fr": "Coiffeur pour hommes", "ar": "حلاق رجالي" },

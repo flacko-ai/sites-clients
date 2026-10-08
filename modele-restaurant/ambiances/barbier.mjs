@@ -110,7 +110,7 @@ export function pageAccueil(c, lang) {
   const horaires = d.horaires_connus || [];
 
   return `${tete(c, lang, { titre: `${nom} — ${tr(d.type_cuisine, lang)}, ${tr(d.quartier, lang)}`, description: tr(d.presentation, lang).slice(0, 155), chemin, prechargerAccueil: true })}
-<body class="barbier">
+<body class="barbier${c.d.variante ? " " + echapper(c.d.variante) : ""}">
 ${bandeau(c, lang)}
 ${enTete(c, lang, "#haut")}
 <main id="haut">
@@ -184,7 +184,7 @@ export function pageMenu(c, lang) {
   const d = c.d, x = TXT[lang];
   const nom = tr(d.nom, lang);
   return `${tete(c, lang, { titre: `${x.tarifs} — ${nom}`, description: `${x.tarifs} · ${nom}`, chemin: (lang === "ar" ? "ar/" : "") + "menu/" })}
-<body class="barbier">
+<body class="barbier${c.d.variante ? " " + echapper(c.d.variante) : ""}">
 ${bandeau(c, lang)}
 ${enTete(c, lang, "../")}
 <main>

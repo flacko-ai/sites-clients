@@ -25,6 +25,7 @@ Si la traduction arabe manque, le texte français est utilisé.
 | `ambiance` | `"classique"` (défaut), `"urbain"` ou `"barbier"` | `urbain` : street food (menu en ticket de caisse, titres larges, livraison sur fond noir) |
 | `prestations` (barbier) | `[{ "nom": {…}, "description": {…}, "prix": 800 }]` | liste des prestations ; vide = encadré « à compléter » en proposition |
 | `horaires_connus` (barbier) | `[{ "jour": {…}, "heures": "10:30 – 23:00" }]` | quand on ne connaît que certains jours |
+| `variante` (barbier) | `"sombre"` | fond noir, photos contrastées, citation en panneau clair |
 | `citation`, `note_google` (barbier) | texte, `4.7` | facultatifs |
 | `mode` | `"reservation"` (défaut) ou `"commande"` | `commande` : boutons « Commander sur WhatsApp » (restauration rapide, livraison) |
 | `horaires` vide `{}` | — | si les horaires sont inconnus, la carte des horaires et le statut « Ouvert/Fermé » sont masqués |
