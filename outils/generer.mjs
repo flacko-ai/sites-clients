@@ -14,10 +14,11 @@ import QRCode from "qrcode";
 import * as classique from "../modele-restaurant/gabarits.mjs";
 import * as urbain from "../modele-restaurant/ambiances/urbain.mjs";
 import * as barbier from "../modele-restaurant/ambiances/barbier.mjs";
+import * as patisserie from "../modele-restaurant/ambiances/patisserie.mjs";
 
 const { pageQR, tr } = classique;
 // Ambiances disponibles (champ "ambiance" de contenu.json) ; "classique" par défaut.
-const AMBIANCES = { classique, urbain, barbier };
+const AMBIANCES = { classique, urbain, barbier, patisserie };
 
 const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const MODELE = path.join(RACINE, "modele-restaurant");
@@ -109,6 +110,16 @@ async function generer(dossier) {
     const dim = await traiterImage(src, path.join(sortie, `img/galerie-${n}-700.webp`), 700);
     await traiterImage(src, path.join(sortie, `img/galerie-${n}-1600.webp`), 1600);
     images.galerie.push({ petit: `img/galerie-${n}-700.webp`, grand: `img/galerie-${n}-1600.webp`, legende: g, ...dim });
+  }
+
+  // Vitrines (catégories de produits illustrées, ambiance pâtisserie)
+  images.vitrines = [];
+  for (const [i, v] of (d.photos?.vitrines || []).entries()) {
+    const src = path.join(photos, v.fichier);
+    if (!(await existe(src))) erreur(`[${dossier}] photo de vitrine introuvable : photos/${v.fichier}`);
+    const n = String(i + 1).padStart(2, "0");
+    const dim = await traiterImage(src, path.join(sortie, `img/vitrine-${n}-800.webp`), 800);
+    images.vitrines.push({ petit: `img/vitrine-${n}-800.webp`, legende: v, detail: v.detail, ...dim });
   }
 
   const couleurs = { principale: "#1f3a33", accent: "#c08a3e", fond: "#f8f3ea", ...(d.couleurs || {}) };

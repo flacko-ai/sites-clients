@@ -25,7 +25,8 @@ Il vend des sites vitrines à des commerces d'Alger (d'abord des restaurants).
 ## Design
 - Plugin `frontend-design` installé : le charger avant de créer une nouvelle ambiance ou de retoucher le design.
 - Ambiances : `classique` (gabarits.mjs + style.css), `urbain` (ambiances/urbain.mjs + urbain.css, street food) et `barbier`
-  (ambiances/barbier.mjs + barbier.css : prestations, horaires_connus, citation, note_google, contact Instagram). Choisir selon le commerce ;
+  (ambiances/barbier.mjs + barbier.css : prestations, horaires_connus, citation, note_google, contact Instagram), `patisserie`
+  (ambiances/patisserie.mjs + patisserie.css : photos.vitrines, nom_complet, citation, trait de signature animé). Choisir selon le commerce ;
   partir de l'univers réel du client (enseigne, ticket, ardoise…) plutôt que de défauts génériques.
 
 ## Technique

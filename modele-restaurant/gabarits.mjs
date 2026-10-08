@@ -141,7 +141,11 @@ function tete(c, lang, { titre, description, chemin, prechargerAccueil = false }
   const urbain = d.ambiance === "urbain";
   const policeTitre = lang === "fr" && d.police_titre && !urbain ? d.police_titre : "";
   const barbier = d.ambiance === "barbier";
-  const polices = barbier
+  const polices = d.ambiance === "patisserie"
+    ? (lang === "ar"
+      ? "family=Aref+Ruqaa:wght@400;700&family=Noto+Kufi+Arabic:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400"
+      : "family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400&family=Jost:wght@400;500;600&family=Aref+Ruqaa:wght@700")
+    : barbier
     ? (d.variante === "sombre" ? "family=Big+Shoulders+Display:wght@600;800&" : "") + (lang === "ar"
       ? "family=Noto+Kufi+Arabic:wght@400;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400"
       : "family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:wght@400;500;600")

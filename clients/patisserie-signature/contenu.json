@@ -1,0 +1,48 @@
+{
+  "statut": "proposition",
+  "exemple_fictif": false,
+  "url": "https://patisserie-signature.netlify.app",
+  "langues": ["fr", "ar"],
+  "ambiance": "patisserie",
+
+  "nom": { "fr": "Signature", "ar": "Signature" },
+  "nom_complet": { "fr": "Signature Pâtisserie", "ar": "Signature Pâtisserie" },
+  "type_cuisine": { "fr": "Pâtisserie & boulangerie", "ar": "حلويات ومخبزة" },
+  "quartier": { "fr": "Dely Ibrahim, Alger", "ar": "دالي إبراهيم، الجزائر العاصمة" },
+  "presentation": {
+    "fr": "Viennoiseries dorées dans leurs paniers d'osier, pains de la boulangerie, cookies garnis, éclairs, entremets et gâteaux traditionnels, et un laboratoire visible depuis la boutique.",
+    "ar": "مخبوزات ذهبية في سلال الخيزران، خبز المخبزة، كوكيز محشوّة، إكلير، حلويات فاخرة وحلويات تقليدية ومختبر ظاهر من المحل."
+  },
+  "citation": { "ar": "كل نكهة فيها حب", "fr": "Dans chaque saveur, il y a de l'amour." },
+
+  "telephone": "0550 03 04 57",
+  "instagram": "patisserie.signature",
+  "adresse": { "fr": "Dely Ibrahim, Alger", "ar": "دالي إبراهيم، الجزائر العاصمة" },
+  "recherche_google_maps": "Pâtisserie signature, Dely Ibrahim",
+  "lien_google_maps": "https://maps.app.goo.gl/JuSdnoj4uKi9Wk768",
+
+  "horaires": {},
+  "horaires_connus": [
+    { "jour": { "fr": "Jeudi", "ar": "الخميس" }, "heures": "06:30 – 02:00" }
+  ],
+
+  "photos": {
+    "accueil": "accueil.jpg",
+    "vitrines": [
+      { "fichier": "viennoiseries.jpg", "fr": "Viennoiseries", "ar": "المخبوزات", "detail": { "fr": "Croissants et pains au chocolat, chaque matin", "ar": "كرواسون وخبز بالشوكولاتة كل صباح" } },
+      { "fichier": "boulangerie.jpg", "fr": "Boulangerie", "ar": "المخبزة", "detail": { "fr": "Baguettes et pains spéciaux", "ar": "باغيت وخبز خاص" } },
+      { "fichier": "cookies.jpg", "fr": "Cookies", "ar": "الكوكيز", "detail": { "fr": "Noisettes, noix de pécan, myrtilles", "ar": "بندق، جوز البقان، توت أزرق" } },
+      { "fichier": "eclairs-entremets.jpg", "fr": "Éclairs & entremets", "ar": "إكلير وحلويات فاخرة", "detail": { "fr": "La vitrine de pâtisserie fine", "ar": "واجهة الحلويات الراقية" } },
+      { "fichier": "gateaux-traditionnels.jpg", "fr": "Gâteaux traditionnels", "ar": "الحلويات التقليدية", "detail": { "fr": "Pour le thé, les fêtes et les invités", "ar": "للشاي والأعياد والضيوف" } }
+    ],
+    "galerie": [
+      { "fichier": "salle.jpg", "fr": "La boutique", "ar": "المحل" },
+      { "fichier": "comptoir.jpg", "fr": "Le comptoir", "ar": "الواجهة" },
+      { "fichier": "facade.jpg", "fr": "La façade", "ar": "الواجهة الخارجية" },
+      { "fichier": "entree.jpg", "fr": "L'entrée", "ar": "المدخل" },
+      { "fichier": "cafe.jpg", "fr": "Un café en terrasse", "ar": "قهوة في التراس" }
+    ]
+  },
+
+  "menu": []
+}

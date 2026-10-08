@@ -22,11 +22,12 @@ Si la traduction arabe manque, le texte français est utilisé.
 | `photos.accueil` | `"accueil.jpg"` | grande photo du haut (de préférence horizontale) |
 | `photos.galerie` | `[{ "fichier": "…", "fr": "légende", "ar": "…" }]` | 6 photos, c'est l'idéal |
 | `menu` | catégories → plats | `prix` en DA (nombre entier) ; `badges` : `maison`, `signature`, `vegetarien`, `nouveau`, `epice` |
-| `ambiance` | `"classique"` (défaut), `"urbain"` ou `"barbier"` | `urbain` : street food (menu en ticket de caisse, titres larges, livraison sur fond noir) |
+| `ambiance` | `"classique"` (défaut), `"urbain"`, `"barbier"` ou `"patisserie"` | `urbain` : street food (menu en ticket de caisse, titres larges, livraison sur fond noir) |
 | `prestations` (barbier) | `[{ "nom": {…}, "description": {…}, "prix": 800 }]` | liste des prestations ; vide = encadré « à compléter » en proposition |
 | `horaires_connus` (barbier) | `[{ "jour": {…}, "heures": "10:30 – 23:00" }]` | quand on ne connaît que certains jours |
 | `variante` (barbier) | `"sombre"` | style « salon tout noir » : accueil plein écran, titres étroits en majuscules, menu flottant, cadres arrondis |
 | `citation`, `note_google` (barbier) | texte, `4.7` | facultatifs |
+| `photos.vitrines` (pâtisserie) | `[{ "fichier": "…", "fr": "Viennoiseries", "detail": {…} }]` | catégories de produits illustrées |
 | `mode` | `"reservation"` (défaut) ou `"commande"` | `commande` : boutons « Commander sur WhatsApp » (restauration rapide, livraison) |
 | `horaires` vide `{}` | — | si les horaires sont inconnus, la carte des horaires et le statut « Ouvert/Fermé » sont masqués |
 | `photos.logo` | `"logo.png"` | facultatif : logo foncé sur fond clair, affiché en blanc à la place du nom sur la photo d'accueil |
