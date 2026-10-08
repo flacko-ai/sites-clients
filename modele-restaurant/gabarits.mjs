@@ -142,7 +142,7 @@ function tete(c, lang, { titre, description, chemin, prechargerAccueil = false }
   const policeTitre = lang === "fr" && d.police_titre && !urbain ? d.police_titre : "";
   const barbier = d.ambiance === "barbier";
   const polices = barbier
-    ? (lang === "ar"
+    ? (d.variante === "sombre" ? "family=Big+Shoulders+Display:wght@600;800&" : "") + (lang === "ar"
       ? "family=Noto+Kufi+Arabic:wght@400;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400"
       : "family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:wght@400;500;600")
     : urbain

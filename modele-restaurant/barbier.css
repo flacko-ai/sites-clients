@@ -176,42 +176,101 @@ dialog.visionneuse form button { width: 44px; height: 44px; border-radius: 50%; 
 
 /* ==========================================================================
    Variante « sombre » (contenu.json → "variante": "sombre")
-   Le salon le soir : fond noir, moulures dessinées en filets clairs, photos plus
-   contrastées, le bleu du poteau comme seule couleur vive. La citation devient
-   un panneau éclairé, en clair sur le noir.
+   Inspirée des salons « tout noir » haut de gamme : fond presque noir, photo d'accueil
+   plein écran, grands titres étroits en majuscules, menu flottant en pilule, cadres
+   arrondis à filet clair. Le poteau bleu reste la signature (et la seule couleur vive).
    ========================================================================== */
 .sombre {
-  --mur: #000;
-  --encre: #f1eee8;
-  --gris: #9d9a93;
-  --moulure: rgb(255 255 255 / .1);
-  --ombre-moulure: rgb(255 255 255 / .22);
+  --mur: #0b0c0f;
+  --surface: #16171a;
+  --encre: #f5f5f4;
+  --gris: #8b8b96;
+  --filet: rgb(255 255 255 / .09);
+  --moulure: var(--filet);
+  --ombre-moulure: rgb(255 255 255 / .14);
   --poteau: #3d6bff;
-  --chene: #c49564;
-  background: #000; color: var(--encre);
+  --f-etroit: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  background: var(--mur); color: var(--encre);
 }
-.sombre .bandeau-proposition { background: #15140f; border-bottom: 1px solid var(--moulure); }
-.sombre .b-entete { background: rgb(0 0 0 / .82); border-bottom-color: var(--moulure); }
-.sombre .b-langue { border-color: var(--ombre-moulure); }
-.sombre .b-marque { color: var(--encre); }
-.sombre h2 { letter-spacing: -.01em; }
-.sombre .b-section { border-top-color: var(--moulure); }
-.sombre .b-cadre img { filter: contrast(1.08) saturate(.8) brightness(.92); }
+.sombre .bandeau-proposition { background: #000; border-bottom: 1px solid var(--filet); }
+
+/* Menu flottant en pilule */
+.sombre .b-entete {
+  top: 10px; width: min(100% - 24px, 820px); margin: 10px auto 0; height: 54px;
+  padding-inline: 18px 8px; border-radius: 999px;
+  background: rgb(22 23 26 / .72); border: 1px solid var(--filet);
+  backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+}
+.sombre .b-marque { font-family: var(--f-etroit); font-weight: 800; font-size: 22px; text-transform: uppercase; letter-spacing: .04em; color: var(--encre); }
+.sombre .b-langue { border-radius: 999px; border-color: var(--ombre-moulure); background: rgb(255 255 255 / .04); }
+
+/* Titres étroits en majuscules */
+.sombre h2, .sombre .b-titre-page, .sombre .b-panneau h3 {
+  font-family: var(--f-etroit); font-weight: 800; text-transform: uppercase; letter-spacing: .01em; line-height: .95;
+}
+.sombre h2 { font-size: clamp(44px, 12vw, 80px); }
+:lang(ar).sombre h2, .sombre :lang(ar) h2 { font-family: "Noto Kufi Arabic", sans-serif; text-transform: none; font-size: clamp(30px, 8vw, 48px); line-height: 1.3; }
+
+/* Accueil plein écran */
+.sombre .b-hero { display: block; position: relative; max-width: none; margin: -64px 0 0; padding: 0; min-height: 100svh; overflow: hidden; isolation: isolate; }
+:lang(ar) .sombre .b-hero, .sombre:lang(ar) .b-hero { padding: 0; }
+.sombre .b-cadre-hero { position: absolute; inset: 0; padding: 0; box-shadow: none; z-index: -2; background: #000; }
+.sombre .b-cadre-hero img { width: 100%; height: 100%; aspect-ratio: auto; object-position: 50% 30%; filter: brightness(.62) contrast(1.1) saturate(.75); }
+.sombre .b-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(120% 70% at 50% 15%, transparent 30%, rgb(11 12 15 / .55) 70%),
+    linear-gradient(180deg, rgb(11 12 15 / .2) 0%, rgb(11 12 15 / .1) 40%, var(--mur) 96%);
+}
+.sombre .b-intro { min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center; padding: 140px 28px 56px; max-width: 820px; margin-inline: auto; }
+.sombre .b-intro h1 {
+  font-family: var(--f-etroit); font-weight: 800; text-transform: uppercase; letter-spacing: .02em;
+  font-size: clamp(64px, 19vw, 150px); line-height: .86;
+  text-shadow: 0 0 28px rgb(255 255 255 / .35), 0 0 2px rgb(255 255 255 / .6);
+}
+.sombre .b-sous-titre { font-family: var(--f-texte); font-style: normal; font-size: 17px; letter-spacing: .02em; color: rgb(255 255 255 / .78); margin: 16px 0 10px; }
+.sombre .b-note { font-size: 15px; color: rgb(255 255 255 / .9); }
+.sombre .b-note span { color: var(--encre); }
+.sombre .b-texte { color: var(--gris); }
+.sombre .b-intro .b-texte { color: rgb(255 255 255 / .72); }
+.sombre .b-intro .b-actions { justify-content: center; }
+/* Le poteau, lumineux, le long du bord */
 .sombre .b-poteau {
+  inset-block: 110px 56px; inset-inline-start: 12px; z-index: 1;
   background: repeating-linear-gradient(135deg, var(--poteau) 0 10px, var(--encre) 10px 16px, #000 16px 26px, var(--encre) 26px 32px);
   background-size: 100% 45.25px;
-  box-shadow: 0 0 0 1px rgb(255 255 255 / .25), 0 0 22px rgb(61 107 255 / .35);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / .3), 0 0 26px rgb(61 107 255 / .55);
 }
-.sombre .b-note span { color: var(--chene); }
+@media (min-width: 900px) {
+  .sombre .b-hero { display: block; padding: 0; }
+  .sombre .b-intro { padding-bottom: 80px; }
+  .sombre .b-poteau { inset-inline-start: 28px; }
+}
+
+/* Boutons en pilule à filet lumineux */
+.sombre .b-btn { border-radius: 999px; }
 .sombre .b-btn-noir { background: var(--encre); color: #000; }
-.sombre .b-btn-contour { background: transparent; border-color: var(--ombre-moulure); color: var(--encre); }
-.sombre .b-btn-contour:hover { background: rgb(255 255 255 / .06); }
-.sombre .b-citation { background: var(--encre); color: #000; }
-.sombre .b-citation .fr { color: #57544e; }
-.sombre .b-plan { background: #0d0d0d; }
-.sombre .b-plan iframe { filter: grayscale(1) invert(.92) contrast(.9) brightness(.9); }
-.sombre .b-pied { border-top-color: var(--moulure); }
-.sombre .b-pied .b-marque { color: var(--encre); }
-.sombre .b-barre-fixe { background: rgb(0 0 0 / .9); border-top-color: var(--moulure); }
-.sombre .b-tarifs li { border-bottom-color: var(--moulure); }
-.sombre .b-horaires div { border-bottom-color: var(--moulure); }
+.sombre .b-btn-contour { background: rgb(255 255 255 / .05); border: 1px solid rgb(255 255 255 / .28); color: var(--encre); box-shadow: inset 0 1px 0 rgb(255 255 255 / .12); backdrop-filter: blur(8px); }
+.sombre .b-btn-contour:hover { background: rgb(255 255 255 / .1); }
+
+/* Sections et cadres arrondis */
+.sombre .b-section { border-top: 0; }
+.sombre .b-cadre { padding: 0; border-radius: 18px; overflow: hidden; background: var(--surface); box-shadow: 0 0 0 1px var(--filet); }
+.sombre .b-cadre img { filter: contrast(1.06) saturate(.8) brightness(.9); }
+.sombre .b-cadre figcaption { font-family: var(--f-texte); font-style: normal; font-size: 13px; letter-spacing: .02em; color: var(--gris); padding: 12px 14px 14px; text-align: start; }
+.sombre .b-panneau { border-radius: 20px; background: var(--surface); box-shadow: 0 0 0 1px var(--filet); }
+.sombre .b-vide p { font-family: var(--f-texte); font-style: normal; font-size: 16px; }
+.sombre .b-tarifs .nom { font-family: var(--f-etroit); font-weight: 600; text-transform: uppercase; font-size: 24px; }
+.sombre .b-tarifs li, .sombre .b-horaires div { border-bottom-color: var(--filet); }
+
+/* Citation : panneau lumineux */
+.sombre .b-citation { background: transparent; padding: 24px 16px 40px; }
+.sombre .b-citation blockquote { background: var(--surface); border-radius: 24px; padding: 48px 22px; box-shadow: 0 0 0 1px var(--filet), 0 30px 80px -40px rgb(61 107 255 / .45); }
+.sombre .b-citation .ar { color: var(--encre); }
+.sombre .b-citation .fr { font-family: var(--f-texte); font-style: normal; font-size: 16px; color: var(--gris); }
+
+.sombre .b-plan { border-radius: 20px; min-height: 320px; }
+.sombre .b-plan iframe { filter: grayscale(1) invert(.92) contrast(.9) brightness(.85); }
+.sombre .b-pied { border-top: 1px solid var(--filet); }
+.sombre .b-pied .b-marque { font-size: 28px; }
+.sombre .b-barre-fixe { background: rgb(11 12 15 / .85); border-top-color: var(--filet); backdrop-filter: blur(14px); }
