@@ -22,6 +22,9 @@ Il vend des sites vitrines à des commerces d'Alger (d'abord des restaurants).
 - Design : charger le plugin `frontend-design`, partir de l'univers réel du commerce (couleurs, enseigne, logo, matières),
   une seule animation marquante, pas de style générique « IA ». Il aime les sites raffinés et sombres/haut de gamme
   (références : blackboxparis.com, maison-kayser.com — logo centré en en-tête).
+- **Varier les inspirations** : pour chaque nouveau client, chercher 2-3 références neuves (dépôts GitHub publics,
+  vrais sites du métier) selon `docs/INSPIRATIONS.md`, les montrer avec captures, et noter ce qui a été utilisé.
+  Ne pas se contenter de recopier les ambiances existantes.
 - Ne rien inventer (prix, horaires, produits non visibles sur les photos) : signaler ce qui manque à la fin.
 - Si le logo est illisible, le recomposer proprement (SVG/texte) et le signaler ; sinon le détourer depuis une photo.
 - Réponses en français simple, étapes numérotées, sans jargon.
