@@ -6,7 +6,8 @@
   "scripts": {
     "generer": "node outils/generer.mjs",
     "nouveau": "node outils/nouveau-client.mjs",
-    "maquette": "node outils/maquette.mjs"
+    "maquette": "node outils/maquette.mjs",
+    "references": "node outils/references.mjs"
   },
   "devDependencies": {
     "qrcode": "^1.5.4",
