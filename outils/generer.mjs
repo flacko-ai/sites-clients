@@ -16,10 +16,11 @@ import * as urbain from "../modele-restaurant/ambiances/urbain.mjs";
 import * as barbier from "../modele-restaurant/ambiances/barbier.mjs";
 import * as patisserie from "../modele-restaurant/ambiances/patisserie.mjs";
 import * as maison from "../modele-restaurant/ambiances/maison.mjs";
+import * as capitonne from "../modele-restaurant/ambiances/capitonne.mjs";
 
 const { pageQR, tr } = classique;
 // Ambiances disponibles (champ "ambiance" de contenu.json) ; "classique" par défaut.
-const AMBIANCES = { classique, urbain, barbier, patisserie, maison };
+const AMBIANCES = { classique, urbain, barbier, patisserie, maison, capitonne };
 
 const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const MODELE = path.join(RACINE, "modele-restaurant");

@@ -147,6 +147,10 @@ function tete(c, lang, { titre, description, chemin, prechargerAccueil = false }
     ? (lang === "ar"
       ? "family=Aref+Ruqaa:wght@400;700&family=Noto+Kufi+Arabic:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400"
       : "family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400&family=Jost:wght@400;500;600&family=Aref+Ruqaa:wght@700")
+    : d.ambiance === "capitonne"
+    ? "family=Gloock&family=Amiri:wght@400;700" + (lang === "ar"
+      ? "&family=Noto+Kufi+Arabic:wght@400;500;700"
+      : "&family=Hanken+Grotesk:wght@400;500;600")
     : barbier
     ? (d.variante === "sombre" ? "family=Big+Shoulders+Display:wght@600;800&" : "") + (lang === "ar"
       ? "family=Noto+Kufi+Arabic:wght@400;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400"

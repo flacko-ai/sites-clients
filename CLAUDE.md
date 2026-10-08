@@ -51,7 +51,8 @@ Il vend des sites vitrines à des commerces d'Alger (d'abord des restaurants).
 - Ambiances : `classique` (gabarits.mjs + style.css), `urbain` (ambiances/urbain.mjs + urbain.css, street food) et `barbier`
   (ambiances/barbier.mjs + barbier.css : prestations, horaires_connus, citation, note_google, contact Instagram), `patisserie`
   (ambiances/patisserie.mjs + patisserie.css : photos.vitrines, nom_complet, citation, trait de signature animé), `maison`
-  (ambiances/maison.mjs + maison.css : enseigne multi-boutiques — boutiques[] avec horaires/espaces, photos.espaces, accroche, maison). Choisir selon le commerce ;
+  (ambiances/maison.mjs + maison.css : enseigne multi-boutiques — boutiques[] avec horaires/espaces, photos.espaces, accroche, maison), `capitonne` (ambiances/capitonne.mjs + capitonne.css : barbier sombre haut de gamme,
+  fond cuir capitonné, présentation qui sort du flou au défilement, mêmes champs que `barbier`). Choisir selon le commerce ;
   partir de l'univers réel du client (enseigne, ticket, ardoise…) plutôt que de défauts génériques.
 
 ## Technique

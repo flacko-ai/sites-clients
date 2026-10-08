@@ -4,8 +4,8 @@
   "exemple_fictif": false,
   "url": "https://h-barber-company.netlify.app",
   "langues": ["fr", "ar"],
-  "ambiance": "barbier",
-  "variante": "sombre",
+  "ambiance": "capitonne",
+  "couleurs": { "principale": "#0e1522", "accent": "#cfd4dc", "fond": "#0e1522" },
 
   "nom": { "fr": "H Barber Company", "ar": "H Barber Company" },
   "type_cuisine": { "fr": "Coiffeur pour hommes", "ar": "حلاق رجالي" },
