@@ -11,6 +11,21 @@ Il vend des sites vitrines à des commerces d'Alger (d'abord des restaurants).
   Netlify publie automatiquement `main`.
 - Ne jamais inventer d'informations sur un vrai client (prix, horaires, adresse) : demander ce qui manque.
 
+## Façon de travailler du propriétaire (à respecter dans chaque nouvelle discussion)
+- Il envoie : lien Google Maps, lien Instagram, captures d'écran (stories, profil), parfois un ZIP SnapTik de photos.
+  Il dit souvent « ne crée rien, j'envoie d'autres photos » puis « c'est tout » : attendre ce signal.
+- Les images envoyées **pendant** un tour de Claude ne sont pas enregistrées en fichiers : lui demander de les renvoyer
+  dans un message séparé. Les images d'un message normal sont dans `/tmp/claude-0/.../images/` (copier tout de suite).
+- Liens `maps.app.goo.gl` : suivre la redirection avec `curl -I` (donne nom + quartier) ; la fiche s'ouvre dans Chromium
+  via `https://www.google.com/maps/search/?api=1&query=…` (téléphone, horaires, note). Instagram/TikTok sont bloqués.
+- **Livrer une maquette HTML** (FR + AR) avec SendUserFile + 2 ou 3 captures d'aperçu. **Pas de Netlify sauf demande.**
+- Design : charger le plugin `frontend-design`, partir de l'univers réel du commerce (couleurs, enseigne, logo, matières),
+  une seule animation marquante, pas de style générique « IA ». Il aime les sites raffinés et sombres/haut de gamme
+  (références : blackboxparis.com, maison-kayser.com — logo centré en en-tête).
+- Ne rien inventer (prix, horaires, produits non visibles sur les photos) : signaler ce qui manque à la fin.
+- Si le logo est illisible, le recomposer proprement (SVG/texte) et le signaler ; sinon le détourer depuis une photo.
+- Réponses en français simple, étapes numérotées, sans jargon.
+
 ## Ajouter un client (restaurant)
 1. Choisir un dossier en minuscules avec tirets (ex. `le-jardin-hydra`), puis `npm install` si besoin et `npm run nouveau -- <dossier>`.
 2. Remplir `clients/<dossier>/contenu.json` (voir `docs/MODELE-RESTAURANT.md`), traduire en arabe, `url` = `https://<dossier>.netlify.app`.
