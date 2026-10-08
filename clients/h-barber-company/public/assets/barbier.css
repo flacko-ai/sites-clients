@@ -1,0 +1,175 @@
+/* Ambiance « Barbier » — tirée du salon H Barber : murs blancs à moulures, parquet chêne,
+   fauteuils en cuir noir, poteau de barbier bleu et noir, gravures anciennes encadrées.
+   Élément fort : la bande « poteau » qui tourne. Le reste est sobre. */
+
+:root {
+  --mur: #ffffff;
+  --moulure: #e4e3df;
+  --ombre-moulure: #cfcdc7;
+  --noir: #000;
+  --gris: #5c5a56;
+  --chene: #a87b4f;
+  --poteau: #1d4ed8;
+  --wa: #1fa855;
+  --f-titre: "Old Standard TT", "Times New Roman", serif;
+  --f-texte: "Instrument Sans", system-ui, sans-serif;
+  --barre-bas: 0px;
+}
+:lang(ar) { --f-texte: "Noto Kufi Arabic", system-ui, sans-serif; --f-titre: "Noto Kufi Arabic", system-ui, sans-serif; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0; background: var(--mur); color: var(--noir);
+  font-family: var(--f-texte); font-size: 17px; line-height: 1.6;
+  padding-bottom: var(--barre-bas);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--poteau); outline-offset: 3px; }
+h1, h2, h3 { margin: 0; font-family: var(--f-titre); font-weight: 400; }
+h2 { font-size: clamp(34px, 9vw, 56px); line-height: 1.05; margin-bottom: 26px; }
+:lang(ar) h2 { font-weight: 700; font-size: clamp(28px, 7vw, 44px); line-height: 1.4; }
+
+.bandeau-proposition { background: var(--noir); color: #fff; font-size: 13px; text-align: center; padding: 7px 16px; }
+.bandeau-proposition strong { color: #8fb0ff; }
+
+/* ---------- En-tête ---------- */
+.b-entete {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  height: 58px; padding-inline: max(16px, calc((100vw - 1180px) / 2));
+  background: rgb(255 255 255 / .94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--moulure);
+}
+.b-marque { font-family: "Old Standard TT", serif; font-size: 21px; font-weight: 700; text-decoration: none; letter-spacing: .01em; margin: 0; }
+.b-langue { font-weight: 600; font-size: 15px; text-decoration: none; padding: 6px 14px; border: 1px solid var(--noir); }
+.b-langue:lang(ar) { font-family: "Noto Kufi Arabic", sans-serif; }
+
+/* ---------- Cadre « moulure » : comme les panneaux des murs du salon ---------- */
+.b-cadre {
+  margin: 0; position: relative; padding: 10px; background: var(--mur);
+  box-shadow: inset 0 0 0 1px var(--ombre-moulure), inset 0 0 0 5px var(--mur), inset 0 0 0 6px var(--moulure);
+}
+.b-cadre img, .b-cadre iframe { width: 100%; height: auto; display: block; }
+.b-cadre figcaption { font-family: "Old Standard TT", serif; font-style: italic; font-size: 15px; color: var(--gris); text-align: center; padding: 10px 4px 2px; }
+:lang(ar) .b-cadre figcaption { font-family: inherit; font-style: normal; }
+
+/* ---------- Accueil ---------- */
+.b-hero {
+  position: relative; display: grid; gap: 24px;
+  padding: 18px 16px 44px 40px;
+  max-width: 1180px; margin-inline: auto;
+}
+:lang(ar) .b-hero { padding: 18px 40px 44px 16px; }
+/* La bande « poteau de barbier » : bleu, blanc, noir, qui tourne lentement */
+.b-poteau {
+  position: absolute; inset-block: 18px 44px; inset-inline-start: 12px; width: 14px; border-radius: 7px;
+  background: repeating-linear-gradient(135deg, var(--poteau) 0 10px, #fff 10px 16px, var(--noir) 16px 26px, #fff 26px 32px);
+  background-size: 100% 45.25px;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / .15);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .b-poteau { animation: tourne 2.4s linear infinite; }
+  @keyframes tourne { to { background-position: 0 45.25px; } }
+}
+.b-cadre-hero img { aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 35%; }
+.b-intro h1 { font-size: clamp(52px, 15vw, 104px); line-height: .95; letter-spacing: -.01em; }
+:lang(ar) .b-intro h1 { font-family: "Old Standard TT", serif; }
+.b-sous-titre { font-family: "Old Standard TT", serif; font-style: italic; font-size: clamp(20px, 5.4vw, 26px); margin: 12px 0 6px; color: var(--gris); }
+:lang(ar) .b-sous-titre { font-family: inherit; font-style: normal; }
+.b-note { font-weight: 600; font-size: 15px; margin: 0 0 18px; }
+.b-note span { color: var(--poteau); }
+.b-texte { color: var(--gris); max-width: 56ch; margin: 0 0 24px; }
+@media (min-width: 900px) {
+  .b-hero { grid-template-columns: 1fr 1fr; align-items: center; gap: 56px; padding: 40px 16px 72px 56px; }
+  :lang(ar) .b-hero { padding: 40px 56px 72px 16px; }
+  .b-poteau { inset-block: 40px 72px; inset-inline-start: 20px; }
+  .b-cadre-hero { order: 2; }
+}
+
+/* ---------- Boutons ---------- */
+.b-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.b-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 22px; font-weight: 600; font-size: 16px; text-decoration: none;
+  transition: transform .12s cubic-bezier(.25, 0, .3, 1), background-color .15s;
+}
+.b-btn:active { transform: scale(.97); }
+.b-btn svg { width: 20px; height: 20px; flex: none; }
+.b-btn-noir { background: var(--noir); color: #fff; }
+.b-btn-wa { background: var(--wa); color: #fff; }
+.b-btn-contour { border: 1px solid var(--noir); background: var(--mur); }
+.b-btn-contour:hover { background: #f4f4f2; }
+
+/* ---------- Sections ---------- */
+.b-section { max-width: 1180px; margin-inline: auto; padding: 56px 16px; border-top: 1px solid var(--moulure); }
+.b-galerie { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.b-galerie button { all: unset; display: block; cursor: zoom-in; width: 100%; }
+.b-galerie img { aspect-ratio: 1; object-fit: cover; }
+@media (min-width: 900px) { .b-galerie { grid-template-columns: repeat(4, 1fr); gap: 18px; } .b-galerie img { aspect-ratio: 3 / 4; } }
+
+/* Citation affichée au mur du salon */
+.b-citation { background: var(--noir); color: #fff; padding: 64px 16px; text-align: center; }
+.b-citation blockquote { margin: 0 auto; max-width: 760px; }
+.b-citation .ar { font-family: "Noto Kufi Arabic", sans-serif; font-weight: 600; font-size: clamp(24px, 6.5vw, 38px); line-height: 1.7; margin: 0; }
+.b-citation .fr { font-family: "Old Standard TT", serif; font-style: italic; font-size: 19px; color: rgb(255 255 255 / .75); margin: 18px 0 0; }
+
+/* Panneau à moulure pour le contenu texte */
+.b-panneau { padding: 26px 22px; box-shadow: inset 0 0 0 1px var(--ombre-moulure), inset 0 0 0 7px var(--mur), inset 0 0 0 8px var(--moulure); }
+.b-vide p { margin: 0; color: var(--gris); font-family: "Old Standard TT", serif; font-style: italic; font-size: 19px; text-align: center; }
+:lang(ar) .b-vide p { font-family: inherit; font-style: normal; }
+.b-tarifs { list-style: none; margin: 0; padding: 0; }
+.b-tarifs li { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; padding: 14px 0; border-bottom: 1px solid var(--moulure); }
+.b-tarifs li:last-child { border-bottom: 0; }
+.b-tarifs .nom { font-family: var(--f-titre); font-size: 21px; }
+.b-tarifs .desc { grid-column: 1; color: var(--gris); font-size: 14.5px; }
+.b-tarifs .prix { grid-row: 1; grid-column: 2; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.b-titre-page { font-size: clamp(40px, 11vw, 64px); margin-bottom: 24px; }
+.b-lien { display: inline-block; margin-top: 22px; font-weight: 600; }
+
+/* Accès & horaires */
+.b-infos-grille { display: grid; gap: 18px; }
+@media (min-width: 900px) { .b-infos-grille { grid-template-columns: 1fr 1.2fr; } }
+.b-adresse { font-size: 19px; font-weight: 600; margin: 0 0 18px; }
+.b-panneau h3 { font-size: 24px; margin: 22px 0 6px; }
+.b-horaires { margin: 0; }
+.b-horaires div { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--moulure); }
+.b-horaires dt { font-weight: 600; }
+.b-horaires dd { margin: 0; font-variant-numeric: tabular-nums; }
+.b-petit { font-size: 14px; color: var(--gris); margin: 10px 0 22px; }
+.b-plan { min-height: 320px; }
+.b-plan iframe { height: 100%; min-height: 300px; border: 0; filter: grayscale(.85) contrast(1.05); }
+
+.b-rdv { text-align: center; }
+.b-rdv .b-texte { margin-inline: auto; }
+.b-rdv .b-actions { justify-content: center; }
+
+/* ---------- Pied ---------- */
+.b-pied { border-top: 1px solid var(--moulure); text-align: center; padding: 36px 16px; font-size: 14px; color: var(--gris); }
+.b-pied p { margin: 4px 0; }
+.b-pied .b-marque { color: var(--noir); font-size: 24px; margin-bottom: 8px; }
+
+/* ---------- Barre fixe (téléphone) ---------- */
+.b-barre-fixe {
+  position: fixed; inset-inline: 0; bottom: 0; z-index: 40;
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  background: rgb(255 255 255 / .96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--moulure);
+}
+.b-barre { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px; }
+.b-barre .b-btn { min-height: 48px; padding: 0 10px; font-size: 15px; }
+body:has(.b-barre-fixe) { --barre-bas: 72px; }
+@media (min-width: 900px) {
+  .b-barre-fixe { display: none; }
+  body:has(.b-barre-fixe) { --barre-bas: 0px; }
+}
+
+/* Visionneuse (script commun) */
+dialog.visionneuse { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 90vh; }
+dialog.visionneuse::backdrop { background: rgb(0 0 0 / .9); }
+dialog.visionneuse img { max-height: 82vh; margin: auto; }
+dialog.visionneuse p { color: #fff; text-align: center; margin: 10px 0 0; font-family: "Old Standard TT", serif; font-style: italic; }
+dialog.visionneuse form { position: fixed; top: 14px; inset-inline-end: 14px; }
+dialog.visionneuse form button { width: 44px; height: 44px; border-radius: 50%; border: 0; font-size: 26px; cursor: pointer; background: rgb(255 255 255 / .15); color: #fff; }

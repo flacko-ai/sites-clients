@@ -140,7 +140,12 @@ function tete(c, lang, { titre, description, chemin, prechargerAccueil = false }
   const nonIndexe = d.statut !== "en-ligne";
   const urbain = d.ambiance === "urbain";
   const policeTitre = lang === "fr" && d.police_titre && !urbain ? d.police_titre : "";
-  const polices = urbain
+  const barbier = d.ambiance === "barbier";
+  const polices = barbier
+    ? (lang === "ar"
+      ? "family=Noto+Kufi+Arabic:wght@400;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400"
+      : "family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:wght@400;500;600")
+    : urbain
     ? (lang === "ar"
       ? "family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Archivo:wdth,wght@62..125,500..900"
       : "family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600")
@@ -175,7 +180,7 @@ ${alternatives}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?${polices}&display=swap">
 ${prechargerAccueil && c.images.accueil ? `<link rel="preload" as="image" imagesrcset="${c.racine}${c.images.accueil.petit} 900w, ${c.racine}${c.images.accueil.grand} 1800w" imagesizes="100vw" fetchpriority="high">` : ""}
-<link rel="stylesheet" href="${c.racine}assets/${urbain ? "urbain" : "style"}.css?v=${c.version}">
+<link rel="stylesheet" href="${c.racine}assets/${d.ambiance && d.ambiance !== "classique" ? d.ambiance : "style"}.css?v=${c.version}">
 <style>:root{--c-principale:${c.couleurs.principale};--c-accent:${c.couleurs.accent};--c-fond:${c.couleurs.fond}${policeTitre ? `;--f-titre:"${echapper(policeTitre)}",Georgia,serif` : ""}}${c.d.position_photo_accueil ? `.hero img.fond{object-position:${echapper(c.d.position_photo_accueil)}}` : ""}</style>
 <script>document.documentElement.classList.add("js")</script>
 </head>`.replace(/\n{2,}/g, "\n");

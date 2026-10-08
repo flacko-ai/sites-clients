@@ -13,10 +13,11 @@ import sharp from "sharp";
 import QRCode from "qrcode";
 import * as classique from "../modele-restaurant/gabarits.mjs";
 import * as urbain from "../modele-restaurant/ambiances/urbain.mjs";
+import * as barbier from "../modele-restaurant/ambiances/barbier.mjs";
 
 const { pageQR, tr } = classique;
 // Ambiances disponibles (champ "ambiance" de contenu.json) ; "classique" par défaut.
-const AMBIANCES = { classique, urbain };
+const AMBIANCES = { classique, urbain, barbier };
 
 const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const MODELE = path.join(RACINE, "modele-restaurant");

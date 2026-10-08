@@ -1,0 +1,45 @@
+{
+  "statut": "proposition",
+  "exemple_fictif": false,
+  "url": "https://h-barber-company.netlify.app",
+  "langues": ["fr", "ar"],
+  "ambiance": "barbier",
+
+  "nom": { "fr": "H Barber Company", "ar": "H Barber Company" },
+  "type_cuisine": { "fr": "Coiffeur pour hommes", "ar": "حلاق رجالي" },
+  "quartier": { "fr": "Val d'Hydra, Alger", "ar": "فال دحيدرة، الجزائر العاصمة" },
+  "presentation": {
+    "fr": "Un salon lumineux à Val d'Hydra : fauteuils de barbier en cuir, espace shampoing, et un salon d'attente avec canapés et console de jeux pour patienter avant son tour.",
+    "ar": "صالون مضيء في فال دحيدرة: كراسي حلاقة من الجلد، ركن لغسل الشعر، وصالون انتظار بأرائك وجهاز ألعاب لتمضية الوقت قبل دوركم."
+  },
+  "citation": {
+    "ar": "إن الله يحب إذا عمل أحدكم عملاً أن يتقنه",
+    "fr": "« Allah aime que lorsque l'un de vous accomplit un travail, il le fasse avec perfection. »"
+  },
+  "note_google": 4.7,
+
+  "telephone": "+213 20 06 83 46",
+  "instagram": "h_barber_comapny",
+  "adresse": { "fr": "Résidence Chaabani, Val d'Hydra, Hydra, Alger", "ar": "إقامة شعباني، فال دحيدرة، حيدرة، الجزائر العاصمة" },
+  "recherche_google_maps": "H barber coiffeur homme, Hydra",
+  "lien_google_maps": "https://maps.app.goo.gl/Hy41xmvdJdsTNGo39",
+
+  "horaires": {},
+  "horaires_connus": [
+    { "jour": { "fr": "Jeudi", "ar": "الخميس" }, "heures": "10:30 – 23:00" },
+    { "jour": { "fr": "Vendredi", "ar": "الجمعة" }, "heures": "15:00 – 23:00" }
+  ],
+
+  "photos": {
+    "accueil": "accueil.jpg",
+    "galerie": [
+      { "fichier": "salon-attente.jpg", "fr": "Le salon d'attente", "ar": "صالون الانتظار" },
+      { "fichier": "fauteuil.jpg", "fr": "Le fauteuil", "ar": "الكرسي" },
+      { "fichier": "client.jpg", "fr": "Installez-vous", "ar": "تفضّلوا بالجلوس" },
+      { "fichier": "produits.jpg", "fr": "Les produits du salon", "ar": "منتجات الصالون" }
+    ]
+  },
+
+  "prestations": [],
+  "menu": []
+}
