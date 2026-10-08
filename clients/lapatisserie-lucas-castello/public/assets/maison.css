@@ -57,7 +57,7 @@ h2::after { content: ""; display: block; width: 46px; height: 3px; background: v
 
 /* ---------- Accueil : panneau chocolat + photo + poutre moutarde ---------- */
 .m-hero { position: relative; display: grid; background: var(--chocolat); color: #fff; overflow: hidden; isolation: isolate; }
-.m-hero-photo img { width: 100%; height: min(58svh, 520px); object-fit: cover; }
+.m-hero-photo img { width: 100%; height: min(62svh, 560px); object-fit: cover; object-position: 50% 45%; }
 .m-hero-texte { order: 2; padding: 44px 22px 52px; position: relative; z-index: 2; background: var(--chocolat); }
 .m-marque-hero { gap: 18px; color: #fff; --grain-fente: var(--chocolat); }
 .m-marque-hero .m-grain { width: 40px; height: 62px; }
@@ -65,7 +65,7 @@ h2::after { content: ""; display: block; width: 46px; height: 3px; background: v
 .m-marque-hero .m-l2 { font-size: clamp(13px, 3.4vw, 20px); letter-spacing: .26em; margin-top: 10px; color: var(--moutarde); }
 .m-accroche { font-family: var(--f-titre); font-size: clamp(21px, 5.4vw, 28px); line-height: 1.35; margin: 28px 0 30px; max-width: 30ch; color: #f6efe7; }
 /* La poutre : une bande moutarde en diagonale qui traverse l'accueil */
-.m-poutre { position: absolute; z-index: 1; width: 22px; height: 160%; top: -30%; inset-inline-start: 62%; background: var(--moutarde); transform: rotate(24deg); box-shadow: 0 0 0 6px rgb(226 174 12 / .18); pointer-events: none; }
+.m-poutre { position: absolute; z-index: 1; width: 22px; height: 160%; top: -30%; inset-inline-start: 90%; background: var(--moutarde); transform: rotate(24deg); box-shadow: 0 0 0 6px rgb(226 174 12 / .18); pointer-events: none; }
 @media (prefers-reduced-motion: no-preference) {
   .m-poutre { animation: poutre 1.1s cubic-bezier(.2, .7, .2, 1) both; }
   @keyframes poutre { from { transform: rotate(24deg) translateY(-110%); } }
